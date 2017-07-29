@@ -1,0 +1,51 @@
+#
+# ~/.aliases
+#
+alias ls='ls -h --color=auto --group-directories-first'
+alias lal='ls -Al --color=auto -h --group-directories-first'
+alias ll='ls -l --group-directories-first'
+alias la='ls -A --group-directories-first'
+alias lst='ls -ht --color=auto --group-directories-first'
+alias lalt='ls -Alt --color=auto -h --group-directories-first'
+alias llt='ls -lt --group-directories-first'
+alias lat='ls -At --group-directories-first'
+alias cd..='cd ..'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ping='ping -c 3'
+alias mp='mocp'
+alias sysinfo='sudo inxi -c 33 -v 7'
+alias grep='grep --color=auto'
+alias less='/usr/share/vim/vim80/macros/less.sh'
+alias Journal='sudo journalctl -b -p 3'
+alias Bedehusgata28='ssh bedehusgata28.homelinux.net'
+alias Bedehusgata30='ssh orsteen.dyndns-home.com'
+alias Bedehusgata='ssh Bedehusgata' 
+alias TV-PC='ssh TV-PC'
+alias install='sudo pacman -S'           # Install specific package(s) from the repositories
+alias remove='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias oppdater='sudo pacman -Syu && pacaur -u'
+alias sysstart='sudo systemctl start'
+alias sysstop='sudo systemctl stop'
+alias sysenable='sudo systemctl enable'
+alias sysdisable='sudo systemctl disable'
+alias sysstatus='sudo systemctl status'
+alias sway='XKB_DEFAULT_LAYOUT=no sway'
+#tmux-kommandoer
+alias Vtmux='tmux new-session -s Vim'
+alias Ktmux='tmux new-session -s Kommando'
+alias Otmux='tmux new-session -s Oppdat'
+alias Stmux='bash StartTmux'
+alias TAK='tmux attach-session -t Kommando'
+alias TAO='tmux attach-session -t Oppdat'
+alias TAV='tmux attach-session -t Vim'
+#gcalcli-kommandoer
+alias calNå='gcalcli agenda'
+alias calUke='gcalcli calw -w 20'
+alias calMåned='gcalcli calm -w 20'
+alias calNy="gcalcli add --calendar '63ecco@gmail.com'" 
+#trash (fra terminal)
+alias tp='trash-put'
+alias te='trash-empty'
+alias tl='trash-list'
+alias tr='trash-restore'
