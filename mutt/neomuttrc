@@ -1,0 +1,105 @@
+set folder      = imaps://imap.gmail.com/
+source ~/.mutt/hemmelig
+set spoolfile   = +INBOX
+#mailboxes       = +INBOX
+mailboxes imaps://imap.gmail.com/INBOX +[Gmail]/Sendt\ e-post
+
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+set header_cache = ~/.cache/mutt
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+# Specify where to save and/or look for postponed messages.
+set postponed = +[Gmail]/Drafts
+
+# Allow Mutt to open new imap connection automatically.
+unset imap_passive
+
+# Keep IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# How often to check for new mail (time in seconds).
+set mail_check = 120
+
+set my_pass='stentor1109'
+set my_user=tororsteen
+set smtp_url=smtps://$my_user:$my_pass@smtp.googlemail.com
+set record = +Sent
+unset record
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set sidebar_visible
+# Make the Sidebar visible by default
+bind index,pager B sidebar-toggle-visible
+# Use 'B' to switch the Sidebar on and off
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+# basic colors {{{2 ---------------------------------------------------------
+color normal color243 default
+color error color124 default
+color tilde color243 default
+color message color246 default
+color markers color34 default
+color attachment color246 default
+color search color34 default
+color status color28 default
+color indicator default color28
+color tree color28 default # arrow in threads
+
+# basic monocolor screen
+mono bold bold
+mono underline underline
+mono indicator reverse
+mono error bold
+
+
+# index {{{2 ----------------------------------------------------------------
+color index color238 default "~v~(!~N)" # collapsed thread with no unread
+color index color238 default "~P" # messages from me
+color index color240 default "~l~(!~N)" # messages for List
+color index color246 default "~Q" # messages that have been replied to
+color index color255 default "~v~(~F)!~N" # collapsed thread with flagged, no unread
+color index color255 default "~F" # flagged messages
+color index color40 default "~U" # unread messages
+color index color40 default "~N" # new messages
+color index color40 default "~O" # old messages
+color index color40 default "~N~p!~F" # new messages to me
+color index color40 default "~v~(~N)" # collapsed thread with some unread
+color index color40 default "~N~v~(~N)" # collapsed thread with unread parent
+color index color40 default "~v~(~F~N)" # collapsed thread with some unread & flagged
+color index default color124 "~v~(~D)" # thread with deleted (doesn't differentiate between all or partial)
+color index default color124 "~D" # deleted messages
+
+
+
+# message headers {{{2 ------------------------------------------------------
+
+color hdrdefault color246 default
+color header color40 default "^(From)"
+color header color40 default "^(Subject)"
+color header color249 default "^(X-)"
+color header color249 default "^(User-Agent)"
+
+# body {{{2 -----------------------------------------------------------------
+
+color quoted color94 default
+color quoted1 color76 default
+color quoted2 color136 default
+color quoted3 color70 default
+color quoted4 color130 default
+
+color signature color249 default
+#color bold color235 default
+#color underline color235 default
+
+# Markdown {{{2
+color body color255 default "^#.*"
+color body color252 default "^##.*"
+color body color240 default "^###.*"
+color body color248 default "^####.*"
