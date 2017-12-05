@@ -37,6 +37,9 @@ bind index,pager B sidebar-toggle-visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 
+# Oppdaterer med G
+bind index G imap-fetch-mail
+
 # basic colors {{{2 ---------------------------------------------------------
 color normal color243 default
 color error color124 default
