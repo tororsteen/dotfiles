@@ -1,8 +1,31 @@
-set folder      = imaps://imap.gmail.com/
-source ~/.mutt/hemmelig
+# Dette oppsettet er basert på:
+# Gmail synkroniseres til ~/Mail/Gmail med offlineimap
+# ellenors-konto (pop3) satt opp med getmail som lagrer meldinger i ~/Mali/Ellenors
+# All mail sendes med msmtp fra gmail-kontoen
+# Det er postbokser til lagring under Ellenors-mappa
+#
+# Setter heading på melding
+set realname   = "Tor Orsteen"
+set from       = "tororsteen@gmail.com"
+
+#Bruker msmtp til å sende post
+set sendmail="/usr/bin/msmtp"
+
+#Setter mappe og postboks for innkommende g-mail
+set folder =  ~/Mail/Gmail
 set spoolfile   = +INBOX
-#mailboxes       = +INBOX
-mailboxes imaps://imap.gmail.com/INBOX +[Gmail]/Sendt\ e-post
+mailboxes       = +INBOX
+# Laster inn liste over postbokser
+source ~/.mutt/postbokser
+
+
+#Håndtering av sletta meldinger
+# Folder in which to put deleted emails
+set trash=+'[Gmail].Papirkurv'
+# The default delete key 'd' will move an email to the 'trash' folder
+# Bind 'D' to REALLY delete an email
+bind index D purge-message
+# Note: Deleting emails from the 'trash' folder will REALLY delete them.
 
 # Store message headers locally to speed things up.
 # If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
@@ -14,32 +37,55 @@ set header_cache = ~/.cache/mutt
 set message_cachedir = "~/.cache/mutt"
 
 # Specify where to save and/or look for postponed messages.
-set postponed = +[Gmail]/Drafts
+set postponed = +'[Gmail].Utkast'
 
 # Allow Mutt to open new imap connection automatically.
 unset imap_passive
 
-# Keep IMAP connection alive by polling intermittently (time in seconds).
-set imap_keepalive = 300
-
-# How often to check for new mail (time in seconds).
-set mail_check = 120
-source ~/.mutt/hemmelig2
-set record = +Sent
-unset record
-
 auto_view text/html
 alternative_order text/plain text/enriched text/html
+
+#Sidebar
+set sidebar_short_path                  # Shorten mailbox names
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
 set sidebar_visible
 # Make the Sidebar visible by default
 bind index,pager B sidebar-toggle-visible
 # Use 'B' to switch the Sidebar on and off
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
+# Move the highlight to the previous mailbox
+bind index,pager \Cp sidebar-prev
+# Move the highlight to the next mailbox
+bind index,pager \Cn sidebar-next
+# Open the highlighted mailbox
+bind index,pager \Co sidebar-open
 
-# Oppdaterer med G
-bind index G imap-fetch-mail
+#Makro til å tagge reklame og flytte til egen mappe
+macro index S <tag-pattern>Magnor\ Glassverk<enter>\
+<tag-pattern>info@blekkskriveren.no<enter>\
+<tag-pattern>info@e.circlekextra.no<enter>\
+<tag-pattern>haugenbok.no<enter>\
+<tag-pattern>post@brownells.no<enter>\
+<tag-pattern>post@k-software.net<enter>\
+<tag-pattern>newsletter@newsletter.frankonia.de<enter>\
+<tag-pattern>nyhetsbrev@motor.naf.no<enter>\
+<tag-pattern>nbbo@nbbo.no<enter>\
+<tag-pattern>fjordkraft<enter>\
+<tag-pattern>stormberg<enter>\
+<tag-pattern>maritim.no<enter>\
+<tag-pattern>shopping@finn.no<enter>\
+<tag-pattern>colorline.no<enter>\
+<tag-pattern>kirkens.nodhjelp@nca.no<enter>\
+<tag-pattern>espen@mforum.no<enter>\
+<tag-pattern>news@res.easyterra.com<enter>\
+<tag-prefix><save-message>~/Mail/Ellenors/..Reklame<enter>\
 
+#Makro til å tagge Twitter og flytte til egen mappe
+macro index W <tag-pattern>info@twitter.com<enter>\
+<tag-prefix><save-message>~/Mail/Ellenors/..Twitter<enter>     
+
+# Fargeoppsett. Er stjålet fra nettet
 # basic colors {{{2 ---------------------------------------------------------
 color normal color243 default
 color error color124 default
