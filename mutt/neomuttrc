@@ -4,9 +4,19 @@
 # All mail sendes med msmtp fra gmail-kontoen
 # Det er postbokser til lagring under Ellenors-mappa
 #
-# Setter heading på melding
+# Setter header på melding
 set realname   = "Tor Orsteen"
 set from       = "tororsteen@gmail.com"
+set use_from=yes
+#Vil ha mulighet til å redigere header
+set edit_headers = yes
+#Bruker vim som editor med stavekontroll
+set editor="vim -c 'set spell spelllang=nb'"
+
+set alias_file=~/.mutt/aliases
+source $alias_file
+set sort_alias= alias
+
 
 #Bruker msmtp til å sende post
 set sendmail="/usr/bin/msmtp"
@@ -39,11 +49,17 @@ set message_cachedir = "~/.cache/mutt"
 # Specify where to save and/or look for postponed messages.
 set postponed = +'[Gmail].Utkast'
 
+save-hook . ~/Mail/Ellenors/
+
+
 # Allow Mutt to open new imap connection automatically.
 unset imap_passive
 
 auto_view text/html
 alternative_order text/plain text/enriched text/html
+
+bind pager <up> previous-line #scroll inside the message rather than the index
+bind pager <down> next-line
 
 #Sidebar
 set sidebar_short_path                  # Shorten mailbox names
@@ -55,9 +71,9 @@ bind index,pager B sidebar-toggle-visible
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
 # Move the highlight to the previous mailbox
-bind index,pager \Cp sidebar-prev
+bind index,pager <C-Up> sidebar-prev
 # Move the highlight to the next mailbox
-bind index,pager \Cn sidebar-next
+bind index,pager <C-Down> sidebar-next
 # Open the highlighted mailbox
 bind index,pager \Co sidebar-open
 
@@ -85,9 +101,15 @@ macro index S <tag-pattern>Magnor\ Glassverk<enter>\
 macro index W <tag-pattern>info@twitter.com<enter>\
 <tag-prefix><save-message>~/Mail/Ellenors/..Twitter<enter>     
 
-# Fargeoppsett. Er stjålet fra nettet
+#Notmuch
+#set virtual_spoolfile=yes
+#set folder=~/Mail
+#source ~/.mailboxes
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+
+# Fargeoppsett. Er stjålet fra nettet og seinere modifisert.
 # basic colors {{{2 ---------------------------------------------------------
-color normal color243 default
+color normal color233 default
 color error color124 default
 color tilde color243 default
 color message color246 default
@@ -95,7 +117,8 @@ color markers color34 default
 color attachment color246 default
 color search color34 default
 color status color28 default
-color indicator default color28
+#color indicator default color28
+color indicator color27 default 
 color tree color28 default # arrow in threads
 
 # basic monocolor screen
@@ -109,18 +132,18 @@ mono error bold
 color index color238 default "~v~(!~N)" # collapsed thread with no unread
 color index color238 default "~P" # messages from me
 color index color240 default "~l~(!~N)" # messages for List
-color index color246 default "~Q" # messages that have been replied to
+color index color243 default "~Q" # messages that have been replied to
 color index color255 default "~v~(~F)!~N" # collapsed thread with flagged, no unread
 color index color255 default "~F" # flagged messages
-color index color40 default "~U" # unread messages
-color index color40 default "~N" # new messages
-color index color40 default "~O" # old messages
-color index color40 default "~N~p!~F" # new messages to me
-color index color40 default "~v~(~N)" # collapsed thread with some unread
-color index color40 default "~N~v~(~N)" # collapsed thread with unread parent
-color index color40 default "~v~(~F~N)" # collapsed thread with some unread & flagged
-color index default color124 "~v~(~D)" # thread with deleted (doesn't differentiate between all or partial)
-color index default color124 "~D" # deleted messages
+color index color2 default "~U" # unread messages
+color index color2 default "~N" # new messages
+color index color2 default "~O" # old messages
+color index color2 default "~N~p!~F" # new messages to me
+color index color2 default "~v~(~N)" # collapsed thread with some unread
+color index color2 default "~N~v~(~N)" # collapsed thread with unread parent
+color index color2 default "~v~(~F~N)" # collapsed thread with some unread & flagged
+color index color124 default "~v~(~D)" # thread with deleted (doesn't differentiate between all or partial)
+color index color124 default  "~D" # deleted messages
 
 
 
@@ -149,3 +172,4 @@ color body color255 default "^#.*"
 color body color252 default "^##.*"
 color body color240 default "^###.*"
 color body color248 default "^####.*"
+
