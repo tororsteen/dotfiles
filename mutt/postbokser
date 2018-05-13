@@ -1,11 +1,17 @@
 # Postbokser som skal dukke opp i neomutt
 #set my_lokalpost='/home/tor/.local/share/evolution/mail/local/'
 #mailboxes = +[Gmail]/Sendt\ e-post
+mailboxes = ~/Mail/Gmail/INBOX
+mailboxes = ~/Mail/Gmail/'[Gmail].Sendt e-post'
+mailboxes = ~/Mail/Gmail/'[Gmail].Papirkurv'
+mailboxes = ~/Mail/Gmail/'[Gmail].Utkast'
+mailboxes = ~/Mail/Gmail/'[Gmail].All e-post'
 
-mailboxes = +'[Gmail].Sendt e-post'
-mailboxes = +'[Gmail].Papirkurv'
-mailboxes = +'[Gmail].Utkast'
-mailboxes = +'[Gmail].All e-post'
+
+#mailboxes = +'[Gmail].Sendt e-post'
+#mailboxes = +'[Gmail].Papirkurv'
+#mailboxes = +'[Gmail].Utkast'
+#mailboxes = +'[Gmail].All e-post'
 set my_lokalpost='/home/tor/Mail/Ellenors/'
 #mailboxes = /home/tor/.cache/evolution/mail/a233fba366a82e545fa163558b79eb818a757c3c/folders/INBOX
 mailboxes = ~/Mail/
