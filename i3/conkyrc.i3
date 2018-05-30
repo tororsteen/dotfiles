@@ -56,8 +56,8 @@ ${fs_free /home} ledig
 ${fs_bar 6 /home}
 
 ${color #00ff00}Trådløst nett$color ${hr 1}
-${color}Signalstyrke: ${wireless_link_qual wlp6s0}%  
-IP-adr.: ${addr wlp6s0} 
+${color}Signalstyrke: ${wireless_link_qual wlo1}%  
+IP-adr.: ${addr wlo1} 
 #${color} ${execi 3600 nm-tool | sed -n '/  Address:/p' | sed -e 's/        //'} Brukt som workaround 
 Ekstern IP: ${execi 3600 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'}
 Nedlastingshastighet: ${downspeedf wlp6s0} Kb/sec
