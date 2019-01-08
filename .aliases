@@ -17,7 +17,7 @@ alias ping='ping -c 3'
 alias mp='mocp'
 alias sysinfo='sudo inxi -c 33 -v 7'
 alias grep='grep --color=auto'
-alias less='/usr/share/vim/vim80/macros/less.sh'
+alias less='/usr/share/vim/vim81/macros/less.sh'
 alias Journal='sudo journalctl -b -p 3'
 #alias Mutt='neomutt'
 alias sway='XKB_DEFAULT_LAYOUT=no sway'
@@ -31,7 +31,7 @@ alias TV-PC='ssh TV-PC'
 #pacman og pacaur
 alias install='sudo pacman -S'           # Install specific package(s) from the repositories
 alias remove='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias oppdater='sudo pacman -Syu && pacaur -u'
+alias oppdater='sudo pacman -Syu && pikaur -Sua'
 #systemctl
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'
