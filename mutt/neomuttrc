@@ -17,6 +17,10 @@ set alias_file=~/.mutt/aliases
 source $alias_file
 set sort_alias= alias
 
+set mailcap_path =   "~/.mailcap"
+auto_view =          "yes"
+alternative_order =  "no"
+mime_lookup application/octet-stream 
 
 #Bruker msmtp til å sende post
 set sendmail="/usr/bin/msmtp"
@@ -78,6 +82,13 @@ bind index,pager <C-Up> sidebar-prev
 bind index,pager <C-Down> sidebar-next
 # Open the highlighted mailbox
 bind index,pager \Co sidebar-open
+
+#MIME?
+set mime_type_query_command = "xdg-mime query filetype"
+#Bruke abook som adressebok
+set query_command = "abook --mutt-query '%s'"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
 
 #Makro til å tagge reklame og flytte til egen mappe
 macro index S <tag-pattern>Magnor\ Glassverk<enter>\

@@ -36,7 +36,8 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'colorsupport.vim'
-Plugin 'vim-latex/vim-latex'
+"Plugin 'vim-latex/vim-latex'
+Plugin 'lervag/vimtex'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'Townk/vim-autoclose'
 Plugin 'WolfgangMehner/c-support'
@@ -121,8 +122,9 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
 "let g:airline_theme='tomorrow'
-let g:airline_theme='understated'
+"let g:airline_theme='understated'
 "let g:airline_theme='papercolor'
+let g:airline_theme='silver'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 set ttimeoutlen=2
@@ -206,6 +208,9 @@ endfunction
 "Setter \S til å kjøre funksjonen Stave()
 nmap \S :exec Stave()<CR>
 "
+"######################################################################################################
+"Clipboard. Bruker clipcoard til kopiering
+set clipboard=unnamedplus
 "#######################################################################################################
 "Diverse bindinger for tastatur
 "Setter \q til å fjerne markeringer etter søk

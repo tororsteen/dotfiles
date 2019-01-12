@@ -67,7 +67,7 @@ launcher_item_app = /usr/share/applications/firefox.desktop
 #launcher_item_app = /usr/share/applications/iceweasel.desktop
 #launcher_item_app = /usr/share/applications/chromium-browser.desktop
 launcher_item_app = /usr/share/applications/google-chrome.desktop
-
+launcher_item_app= /home/tor/Dokumenter/Data/Konfigurasjoner/xfce4-appfinder.desktop
 # Taskbar
 taskbar_mode = multi_desktop
 taskbar_padding = 2 3 2

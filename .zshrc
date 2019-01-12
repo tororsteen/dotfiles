@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 #ZSH=$HOME/.oh-my-zsh
 
-ZSH=/home/tor/.oh-my-zsh
+ZSH=/usr/share/oh-my-zsh
 
 
 # Set name of the theme to load.
@@ -45,6 +45,9 @@ ZSH_THEME="tors"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode)
 
+#Setter $ til Shift4
+#[[ -f /home/tor/.Xmodmap ]] && xmodmap /home/tor/.Xmodmap
+
 source $ZSH/oh-my-zsh.sh
 
 if [ -f ~/.aliases ]
@@ -61,7 +64,7 @@ export PATH=/home/tor/bin:$PATH
 # For å unngå unødvendige feilmeldinger i terminal 
 export NO_AT_BRIDGE=1
 systemctl --user import-environment PATH
-source /usr/share/doc/pkgfile/command-not-found.zsh
+source /usr/share/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh
 autoload -U zutil
 autoload -U compinit
 autoload -U complist

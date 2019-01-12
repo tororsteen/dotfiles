@@ -1,200 +1,3 @@
-Bedehusgata30
-Bedehusgata30
-Bedehusgata30
-oppdater
-Bedehusgata30
-oppdater
-ssh Bedehusgata
-complete -p rm
-sudo pacman -S pkgfile
-pkgfile --update
-sudo pkgfile --update
-gvim .bashrc
-abiword
-oppdater
-TV-PC
-Bedehusgata28
-ssh Bedehusgata
-TV-PC
-Bedehusgata28
-oppdater
-cat  /etc/systemd/logind.conf
-man logind.conf
-man systemd-logind.service
-man loginctl
-echo $PAGER
-cd Scripts/
-ls
-sudoupdatedb
-sudo updatedb
-cd Logg/
-ls
-cat feil_100613 
-cat logg_100613 
-cat /etc/xdg/Thunar/uca.xml
-echo $TerminalEmulator
-cat .xinitrc
-gvim .xinitrc
-echo $TERM
-printenv
-env TERM=sakura thunar
-env
-export TERM="sakura"
-env
-oppdater
-gvim .bashrc
-pacman -Qtdq
-sudo pacman -Qii | awk '/^MODIFIED/ {print $2}'
-cat /etc/NetworkManager/NetworkManager.conf
-comm -23 <(pacman -Qeq|sort) <(pacman -Qgq base base-devel|sort)
-man pkgfile
-sudo pkgfile --update
-pkgfile serf
-pkgfile --list serf
-pkgfile --list thunar
-env
-cat .xinitrc
-gvim .xinitrc
-man sakura
-thunar
-close
-exit thunar
-ls
-cd syslinux
-ls
-gvim syslinux.cfg
-cat .baschrc
-cat .bashrc
-zenit
-zenity --file-selection
-cd Nedlastinger/
-ls
-mv zenity-html-3.2.0.tar.gz ~/Scripts/
-cd ~/Scripts/
-ls
-tar xvf zenity-html-3.2.0.tar.gz 
-ls
-cd zenity-html-3.2.0/
-ls
-cd da
-ls
-oppdater
-zenity --calendar
-cd Scripts/
-ls
-mkdir Admin_scripts
-ls
-cd Admin_scripts/
-ls
-gvim rettigheter
-ls
-chmod +x rettigheter 
-ls
-. rettigheter
-gvim rettigheter
-. rettigheter 
-mkdir Testfiler
-cd Testfiler
-touch test1 test2 test3
-ls
-ls -l
-cd ..
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-man chmod
-cd Testfiler/
-lsal
-cd ..
-man chmod
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-cd Testfiler/
-ls
-chmod g+w test1
-ls -l
-chmod g-w /home/tor/Scripts/Admin_scripts/Testfiler/test1
-ls -l
-cd ..
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-cd Testfiler/
-echo "Dette er filinnholdet" > test1
-cat test1
-cd ..
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-gvim rettigheter 
-. rettigheter 
-cd Testfiler/
- lsal
-gvim rettigheter 
-cd ..
-gvim rettigheter 
-. rettigheter 
-cd Testfiler/
-lsal
-cd ..
-locate zenity
-clear
-ls
-gvim krysseliste
-chmod +x krysseliste 
-. krysseliste 
-. krysseliste 
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-. krysseliste 
-. krysseliste 
-. krysseliste 
-. krysseliste 
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-oppdater
-. krysseliste 
-gvim krysseliste
-. krysseliste 
-ls
-cat utfil
-cat utfil1
-sed 's | \n' utfil1
-sed 's | /\n' utfil1
-sed 's \| /\n' utfil1
-sed 's \| / \n' utfil1
-sed 's | / \n' utfil1
-sed -e 's | / \n' utfil1
-sed -e 's |/\n' utfil1
-sed -e 's \|/"    "' utfil1
-sed  's \|/"    "' utfil1
-cat utfil1
-sed  's Gruppe/Andre' utfil1
 sed -e 's Gruppe/Andre' utfil1
 sed -n 's Gruppe/Andre' utfil1
 sed -e 's/Gruppe/Andre' utfil1
@@ -498,3 +301,200 @@ rm fe*
 lal
 du -sch .[!.]* * | sort -h
  exit  
+Stmux
+man ls
+man ln
+cd dotfiles/
+git log
+mkdir i3
+cd i3
+cp ~/.config/i3/* .
+lal
+cd  ~/.config/i3
+rm config
+ln -s ~/dotfiles/i3/config config
+lal
+rm config.old 
+rm conkyrc.i3 
+ln -s ~/dotfiles/conkyrc.i3 conkyrc.i3
+lal
+rm tint2.i3 
+ln -s ~/dotfiles/tint2.i3 tint2.i3
+lal
+cd  ~/dotfiles/
+lal
+cd ~/.config/i3
+lal
+rm config 
+ln -s ~/dotfiles/i3/config
+lal
+rm conkyrc.i3 
+ln -s ~/dotfiles/i3/conkyrc.i3 conkyrc.i3
+ln -s ~/dotfiles/i3/tint2.i3 tint2.i3
+rm tint2.i3 
+ln -s ~/dotfiles/i3/tint2.i3 tint2.i3
+lal
+reboot
+stmux
+Stmux
+su
+oppdater 
+Bedehusgata30
+mc
+Bedehusgata30
+cd Dokumenter/Data/Mirrors/
+lal
+cp /etc/pacman.d/mirrorlist .
+lal
+cat mirrorlist
+cat mirrorlist.curent_300717 
+rm mirrorlist
+mc
+Bedehusgata30
+oppdater 
+ ~
+~
+cd ~
+systemctl
+systemctl | less
+pacaur -Ss wpa_supplicant_gui
+wpa_supplicant_gui
+man wpa_supplicant_gui
+cd /etc/wpa_supplicant/
+lal
+man wpa_suplicant
+man wpa_supplicant
+man  wpa_suppli‐
+man wpa_suplicant.conf
+man wpa_supplicant.conf
+networkctl list
+sudo cp ~/Dokumenter/Data/Konfigurasjoner/wpa_supplicant-wlp6s0.conf .
+lal
+~
+cd ~
+sudo vim /etc/systemd/network/25-wireless.network
+cd /etc/systemd/network/
+lal
+cd /etc/
+ls
+vimdiff resolv.conf resolv.conf.bak 
+rm resolv.conf
+sudo rm resolv.conf
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+systemctl | less
+sysstop NetworkManager.service
+sysstart systemd-networkd.service
+sysstart systemd-resolved.service
+sysstart wpa_supplicant@wlp6s0.service
+wpa_cli 
+wpa_cli 
+wpa_cli
+cd /etc/wpa_supplicant/
+lal
+sudo wpa_supplicant -B -i wpl6s0 -c /etc/wpa_supplicant/wpa_supplicant-wpl6s0.conf
+sudo wpa_supplicant -B -i wpl6s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp6s0.conf
+wpl_cli
+wpa_cli
+sysstart wpa_supplicant@wlp6s0.service
+sysstop wpa_supplicant-wlp6s0.conf 
+sudo wpa_supplicant -B -i wpl6s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp6s0.conf
+sudo reboot
+cd dotfiles/
+lal
+git add i3
+git commit -m "La til filer for i3" i3
+git push origin master
+sudo rm /etc/resolv.conf
+sudo reboot
+Stmux
+sysstart wpa_supplicant@wlp
+sysstart wpa_supplicant@localhost
+sysstart wpa_supplicant@wlp6s0
+sysstatus wpa_supplicant@wlp6s0
+ifconfig set wlp6s0 up
+ifconfig --help
+ifconfig  wlp6s0 up
+sudo ifconfig  wlp6s0 up
+sysstart wpa_supplicant@wlp6s0
+sysstatus wpa_supplicant@wlp6s0
+wpa_gui
+wpa_cli
+sysstop wpa_supplicant@wlp6s0
+cd /etc/wpa_supplicant/
+lal
+sudo vim wpa_supplicant-wlp6s0.conf 
+sysstart wpa_supplicant@wlp6s0
+wpa_gui 
+cd /etc/wpa_supplicant/
+ls
+ping vg.no
+ping vg.no
+sysstop NetworkManager
+sudo rm resolv.conf
+sudo rm /etc/ resolv.conf
+sudo rm /etc/resolv.conf
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sysstart systemd-networkd.service
+sysstart systemd-resolved.service
+ping vg.no
+wpa_cli
+sudo reboot
+sudo rm /etc/resolv.conf
+sudo reboot
+Stmux
+wifi-radar
+sudo wifi-radar
+sysstop NetworkManager
+ping vg.no
+sudo wifi-radar
+sysstart NetworkManager
+ping vg.no
+sudo iwlist wlp6s0 scan 
+sudo iwlist wlp6s0 scan  | less
+systemctl list-unit-files --state=enabled
+sysstop NetworkManager.service
+sysstop NetworkManager-dispatcher.service
+sudo wifimenu
+sudo wifi-menu
+systemctl list-unit-files --state=enabled
+sysdisable netctl-auto@.service
+sysstop netctl-auto@.service
+sysstart netctl-auto@wpl6s0.service
+journalctl -xe
+sudo reboot
+Stmux
+pacaur -Ss wpa_actiond
+cd /etc/netctl
+lal
+sudo vim wlp6s0-Orsteen 
+cd interfaces/
+lal
+cd ../hooks/
+lal
+cat dhcp 
+cat status 
+pacaur -Ss dhclient
+pacaur -Ss dhcpcd
+cat /run/NetworkManager/resolv.conf
+nmtui
+cat /etc/hosts
+cat /etc/hostname
+sudo vim /etc/hosts
+cat /etc/NetworkManager/NetworkManager.conf | less
+sudo vim /etc/NetworkManager/NetworkManager.conf
+sudo reboot
+systemd-analyze blame
+systemd-analyze
+systemd-analyze chain
+clear
+systemd-analyze critical-chain
+Stmux
+echo $SHELL
+zsh
+chsh -l
+chsh -s /bin/zsh
+zsh --version
+echo $SHELL
+chsh -s $(which zsh)
+echo $SHELL
+sudo reboot
