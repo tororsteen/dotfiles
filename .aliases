@@ -26,7 +26,7 @@ alias Post='~/Mail/Ellenors'
 #ssh
 alias Bedehusgata28='ssh bedehusgata28.homelinux.net'
 alias Bedehusgata30='ssh orsteen.dyndns-home.com'
-alias Bedehusgata='ssh Bedehusgata' 
+alias Bedehusgata='ssh 192.168.10.100' 
 alias TV-PC='ssh TV-PC'
 #pacman og pacaur
 alias install='sudo pacman -S'           # Install specific package(s) from the repositories

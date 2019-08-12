@@ -30,6 +30,7 @@ mailboxes = $my_lokalpost/Arkiv.2016
 mailboxes = $my_lokalpost/Arkiv.2017
 mailboxes = $my_lokalpost/Arkiv.2018
 mailboxes = $my_lokalpost/Arkiv.2019
+mailboxes = $my_lokalpost/Arkiv_Alt
 mailboxes = $my_lokalpost/Feilsendt
 #mailboxes = $my_lokalpost/Trash
 

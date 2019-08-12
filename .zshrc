@@ -61,6 +61,7 @@ export TERM='xterm-256color'
 bindkey -v
 export EDITOR="vim"
 export PATH=/home/tor/bin:$PATH
+export PATH=/usr/include/qt4/QtGui:$PATH
 # For å unngå unødvendige feilmeldinger i terminal 
 export NO_AT_BRIDGE=1
 systemctl --user import-environment PATH

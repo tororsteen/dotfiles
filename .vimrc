@@ -43,6 +43,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'WolfgangMehner/c-support'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'majutsushi/tagbar'
 "Plugin 'junegunn/goyo.vim'
 "#####################################################################################################
 " The following are examples of different formats supported.
@@ -191,6 +192,9 @@ let NERDTreeShowHidden=1
 "set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 "
+" Legger inn meny for C++-programmering
+let g:C_RootMenu = '&C\/C\+\+.'
+
 "######################################################################################################
 "Funksjon for å fjerne stygg utheving av feilstava ord
 function Stave()
@@ -239,3 +243,5 @@ imap ¤ $
 "Lagre som rot med :w!!
 "cmap w!! w !sudo tee % 
 cmap <C-K> Calendar -position=tab
+nmap <C-m> :emenu <space> <tab>
+nmap \t :TagbarToggle<CR>
