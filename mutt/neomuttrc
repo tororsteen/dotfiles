@@ -83,6 +83,10 @@ bind index,pager <C-Down> sidebar-next
 # Open the highlighted mailbox
 bind index,pager \Co sidebar-open
 
+#Prompt for cc og bcc
+set askbcc=yes
+set askcc=yes
+
 #MIME?
 set mime_type_query_command = "xdg-mime query filetype"
 #Bruke abook som adressebok
