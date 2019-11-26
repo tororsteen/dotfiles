@@ -268,7 +268,7 @@ bindsym $W+r exec gradio
 bindsym $W+v exec pavucontrol
 bindsym $W+w exec libreoffice --writer
 bindsym $W+x exec libreoffice --calc
-bindsym $W+F1 exec synapse
+bindsym $W+F1 exec rofi -show drun
 #Montere NFS fra Bedehusgata v.h.a. script
 bindsym $W+Shift+m exec --no-startup-id /home/tor/bin/monter_NFS &
 bindsym $W+Shift+u exec --no-startup-id /home/tor/bin/umont_NFS &
