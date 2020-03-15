@@ -17,6 +17,7 @@ set my_lokalpost='/home/tor/Mail/Ellenors/'
 mailboxes = ~/Mail/
 mailboxes = $my_lokalpost/Aron
 mailboxes = $my_lokalpost/Bridge
+mailboxes = $my_lokalpost/BuskerudBBO
 mailboxes = $my_lokalpost/Gyltesø
 mailboxes = $my_lokalpost/Nipeto
 mailboxes = $my_lokalpost/Politikk
