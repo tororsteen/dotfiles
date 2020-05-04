@@ -152,6 +152,9 @@ bindsym $mod+Shift+Mod2+KP_8 move container to workspace 8
 bindsym $mod+Shift+Mod2+KP_9 move container to workspace 9
 bindsym $mod+Shift+Mod2+KP_0 move container to workspace 10
 
+
+bindsym --release $mod+Shift+Mod2+KP_1 move container to workspace 1
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -212,6 +215,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #Prøver å starte alle programmer fra systemd
 exec --no-startup-id systemctl --user start wm.target
 
+#exec --no-startup-id /home/tor/Scripts/MonterPkg
 #exec --no-startup-id /home/tor/Scripts/dollar
 #Må kjøre på nm
 #exec --no-startup-id nm-applet 
@@ -240,11 +244,11 @@ exec --no-startup-id (sudo systemctl start gpm.service)
 #exec --no-startup-id systemctl --user start conkystart
 
 #Setter vanlige programmer til å starte på bestemte arbeidsområder
-assign [class="^libreoffice-writer$"]3
-assign [class="^libreoffice-calc$"]3
-assign [class="^libreoffice-impress$"]3
-assign [class="^Evolution$"]2
+#assign [class="^libreoffice-writer$"]3
+#assign [class="^libreoffice-calc$"]3
+#assign [class="^libreoffice-impress$"]3
 assign [class="^Google-chrome$"]1
+assign [class="^Vivaldi-stable$"]1
 
 #Start av programmer med hurtigtast
 #Setter Windowstasten som modifier for oppstart
@@ -253,18 +257,14 @@ bindsym $W+a exec audacity
 bindsym $W+b exec thunar
 bindsym $W+c exec google-chrome-stable
 bindsym $W+d exec darktable
-bindsym $W+e exec evolution -c mail
-#bindsym $W+f exec firefox
 bindsym $W+g exec gvim 
-bindsym $W+i exec flashpeak-slimjet %U 
+bindsym $W+i exec vivaldi-stable %U 
 bindsym $W+k exec pysol
 bindsym $W+m exec smplayer
 bindsym $W+n exec xpad
 bindsym $W+o exec opera
 bindsym $W+p exec libreoffice --impress
 bindsym $W+r exec gradio
-#bindsym $W+s exec /usr/bin/spotify
-#bindsym $W+t exec sakura
 bindsym $W+v exec pavucontrol
 bindsym $W+w exec libreoffice --writer
 bindsym $W+x exec libreoffice --calc

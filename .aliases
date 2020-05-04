@@ -26,7 +26,9 @@ alias Post='~/Mail/Ellenors'
 #ssh
 alias Bedehusgata28='ssh bedehusgata28.homelinux.net'
 alias Bedehusgata30='ssh orsteen.dyndns-home.com'
+alias Bedehusgata30X='ssh -X orsteen.dyndns-home.com'
 alias Bedehusgata='ssh 192.168.10.100' 
+alias BedehusgataX='ssh -X 192.168.10.100' 
 alias Ellen='ssh ecco@192.168.10.101'
 alias TV-PC='ssh TV-PC'
 #pacman og pacaur

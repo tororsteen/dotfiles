@@ -145,6 +145,7 @@ set noshowmode
 "Får google-kalender inn i Calendar
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+let g:calendar_frame = 'default'
 "
 "#####################################################################################################
 "Kommandoer for undotree

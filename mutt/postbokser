@@ -7,7 +7,6 @@ mailboxes = ~/Mail/Gmail/'[Gmail].Papirkurv'
 mailboxes = ~/Mail/Gmail/'[Gmail].Utkast'
 mailboxes = ~/Mail/Gmail/'[Gmail].All e-post'
 
-
 #mailboxes = +'[Gmail].Sendt e-post'
 #mailboxes = +'[Gmail].Papirkurv'
 #mailboxes = +'[Gmail].Utkast'

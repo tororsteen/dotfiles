@@ -1,6 +1,6 @@
 # Dette oppsettet er basert på:
 # Gmail synkroniseres til ~/Mail/Gmail med offlineimap
-# ellenors-konto (pop3) satt opp med getmail som lagrer meldinger i ~/Mali/Ellenors
+# ellenors-konto (pop3) satt opp med mpop som lagrer meldinger i ~/Mali/Ellenors
 # All mail sendes med msmtp fra gmail-kontoen
 # Det er postbokser til lagring under Ellenors-mappa
 #
@@ -11,7 +11,7 @@ set use_from=yes
 #Vil ha mulighet til å redigere header
 set edit_headers = yes
 #Bruker vim som editor med stavekontroll
-set editor="vim -c 'set spell spelllang=nb'"
+set editor="vim -c 'set spell spelllang=nb tw=80 wrap'"
 
 set alias_file=~/.mutt/aliases
 source $alias_file
@@ -27,10 +27,6 @@ set sendmail="/usr/bin/msmtp"
 
 set spoolfile = ~/Mail/Gmail/INBOX
 
-#Setter mappe og postboks for innkommende g-mail
-#set folder =  ~/Mail/Gmail
-#set spoolfile   = +INBOX
-#mailboxes       = +INBOX
 # Laster inn liste over postbokser
 source ~/.mutt/postbokser
 
@@ -87,9 +83,9 @@ bind index,pager \Co sidebar-open
 set askbcc=yes
 set askcc=yes
 
-#Sorter etter tråder
-set sort="threads"
-set strict_threads="yes"
+#Sorter etter tråder. Få nyeste meldinger først
+set sort = threads 
+set sort_aux = reverse-last-date-received
 
 #MIME?
 set mime_type_query_command = "xdg-mime query filetype"
@@ -122,12 +118,83 @@ macro index S <tag-pattern>Magnor\ Glassverk<enter>\
 macro index W <tag-pattern>info@twitter.com<enter>\
 <tag-prefix><save-message>~/Mail/Ellenors/..Twitter<enter>     
 
-#Notmuch
-#set virtual_spoolfile=yes
-#set folder=~/Mail
-#source ~/.mailboxes
-macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+#Makro som definerer G for å synkronisere Gmail
+macro index G "<shell-escape>offlineimap<enter>" "Synkroniserer G-mail"
 
+#Notmuch
+# Example NeoMutt config file for the notmuch feature.
+# Stjålet fra nettet og modifisert.
+ #--------------------------------------------------------------------------
+ # VARIABLES – shown with their default values
+ # --------------------------------------------------------------------------
+ # This variable specifies notmuch query limit.
+ set nm_db_limit = 0
+ # This variable specifies the default Notmuch database in format:
+ # notmuch://<absolute path>
+ set nm_default_url = "notmuch:///home/tor/Mail"
+ #set nm_default_url = ""
+ # The messages tagged with these tags are excluded and not loaded
+ # from notmuch DB to NeoMutt unless specified explicitly.
+ set nm_exclude_tags = ""
+ # This option specifies timeout for Notmuch database. Default is 5 seconds.
+ set nm_open_timeout = 5
+ # This variable specifies notmuch query type, supported types: 'threads' and
+ # 'messages'.
+ set nm_query_type = messages
+ # Add messages stored to the NeoMutt record (see $record in the NeoMutt docs)
+ # also to notmuch DB. If you reply to an email then the new email inherits
+ # tags from the original email.
+ set nm_record = no
+ # Tags that should be removed or added to the to the messages stored in the NeoMutt record.
+ # example:
+ #   set record = "~/sent-mails"
+ #   set nm_record = yes
+ #   set nm_record_tags = "-inbox,archive,me"
+ set nm_record_tags = ""
+ # This variable specifies notmuch tag which is used for unread messages.
+ set nm_unread_tag = unread
+ # This variable allows you to customize the file browser display for virtual
+ # folders to your personal taste.
+ # %C   current folder number
+ # %f   folder name (description)
+ # %m   number of messages in the mailbox *
+ # %n   number of unread messages in the mailbox *
+ # %N   N if mailbox has new mail, blank otherwise
+ # %>X  right justify the rest of the string and pad with character ``X''
+ # %|X  pad to the end of the line with character ``X''
+ # %*X  soft-fill with character ``X'' as pad
+ set vfolder_format = "%6n(%6N) %f"
+ # When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)
+ # as a spoolfile.
+ set virtual_spoolfile = no
+ # setup time window preferences
+ # first setup the duration, and then the time unit of that duration
+ # when set to 0 (the default) the search window feature is disabled
+ set nm_query_window_duration=0
+ set nm_query_window_timebase="week" # or "hour", "day", "week", "month", "year"
+ # --------------------------------------------------------------------------
+ # FUNCTIONS – shown with an example mapping
+ # --------------------------------------------------------------------------
+ # open a different virtual folder
+ bind index,pager X change-vfolder
+ # read entire thread of the current message
+ bind index,pager + entire-thread
+ # generate virtual folder from query
+ bind index,pager \eX vfolder-from-query
+ # generate virtual folder from query with time window
+ bind index < vfolder-window-backward
+ bind index > vfolder-window-forward
+ # toggle between mailboxes and virtual mailboxes
+ # bind index,pager ??? sidebar-toggle-virtual
+ # --------------------------------------------------------------------------
+ # COMMANDS – shown with an example
+ # --------------------------------------------------------------------------
+ # virtual-mailboxes description notmuch-URL { description notmuch-URL ...}
+ # virtual-mailboxes "Climbing" "notmuch://?query=climbing"
+ # unvirtual-mailboxes { * | mailbox ...}
+ #
+ # --------------------------------------------------------------------------
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"   
 # Fargeoppsett. Er stjålet fra nettet og seinere modifisert.
 # basic colors {{{2 ---------------------------------------------------------
 color normal color233 default
