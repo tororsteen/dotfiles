@@ -216,6 +216,15 @@ nmap \S :exec Stave()<CR>
 "######################################################################################################
 "Clipboard. Bruker clipcoard til kopiering
 set clipboard=unnamedplus
+"
+"#######################################################################################################
+"Funksjon til å skrive ut som pdf
+function Skriv()
+	:hardcopy > %.ps | !ps2pdf %.ps && rm %.ps
+endfunction
+"Binder funksjonen til ctrl-P
+nmap <C-p> :exec Skriv()<CR>
+"
 "#######################################################################################################
 "Diverse bindinger for tastatur
 "Setter \q til å fjerne markeringer etter søk
