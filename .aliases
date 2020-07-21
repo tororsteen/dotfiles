@@ -15,6 +15,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ping='ping -c 3'
 alias mp='mocp'
+alias pv='pulsemixer --color 2'
 alias ncdu='ncdu --color dark'
 alias sysinfo='sudo inxi -c 33 -v 7'
 alias grep='grep --color=auto'
@@ -36,6 +37,7 @@ alias TV-PC='ssh TV-PC'
 alias install='sudo pacman -S'           # Install specific package(s) from the repositories
 alias remove='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
 alias oppdater='sudo pacman -Syu && pikaur -Sua'
+alias pkglist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 #systemctl
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'

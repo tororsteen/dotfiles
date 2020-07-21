@@ -29,21 +29,24 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 "Andre plugins som Vundle skal behandle:
-Plugin 'itchyny/calendar.vim'
-Plugin 'mbbill/undotree'
-Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/calendar.vim'  				"Kalender
+Plugin 'mbbill/undotree'					"Undo tilbake i tid
+Plugin 'scrooloose/nerdtree'				"Åpne filer
+Plugin 'jistr/vim-nerdtree-tabs'			"NerdTree i tab 
+Plugin 'vim-airline/vim-airline'			"Statuslinje
+Plugin 'vim-airline/vim-airline-themes'		"Temaer for airline
 "Plugin 'colorsupport.vim'
 "Plugin 'vim-latex/vim-latex'
-Plugin 'lervag/vimtex'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
-Plugin 'Townk/vim-autoclose'
-Plugin 'WolfgangMehner/c-support'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'majutsushi/tagbar'
+Plugin 'lervag/vimtex'						"LaTex 
+Plugin 'Matt-Deacalion/vim-systemd-syntax' 	"Uthever syntaks i systemd-filer
+Plugin 'Townk/vim-autoclose'				"skriver ( og får automatisk ()
+Plugin 'WolfgangMehner/c-support'			"c og c++ verktøy
+Plugin 'NLKNguyen/papercolor-theme'			"Fargetema
+Plugin 'PotatoesMaster/i3-vim-syntax'		"Utheving i filer til i3 vindusbehandler
+Plugin 'majutsushi/tagbar'					"Viser klasser, funksjoner osv i ei .cpp-fil
+Plugin 'powerman/vim-plugin-AnsiEsc'		"Farge på Esc-sekvenser
+Plugin 'Valloric/YouCompleteMe'				"Fullfører ord mens vi skriver
+Plugin 'vim-scripts/a.vim'					"Bytter mellom .cpp og .h
 "Plugin 'junegunn/goyo.vim'
 "#####################################################################################################
 " The following are examples of different formats supported.
@@ -81,9 +84,23 @@ filetype plugin indent on    " required
 set term=screen-256color
 ":colo morning
 :colo PaperColor
+let g:PaperColor_Theme_Options = {
+\   'language': {
+\     'python': {
+\       'highlight_builtins' : 1
+\     },
+\     'cpp': {
+\       'highlight_standard_library': 1
+\     },
+\     'c': {
+\       'highlight_builtins' : 1
+\     }
+\   }
+\ }
 "
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
+:filetype on
 if has("syntax")
   syntax on
 endif
@@ -184,7 +201,7 @@ let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule_pdf = 'zathura'
 "Sett språk for bruk i Latex. nn=nynorsk, nb=bokmål
-"autocmd FileType tex setlocal spell spelllang=nb
+"autocmd FileType txt setlocal spell spelllang=nb 
 set showtabline=2
 "######################################################################################################
 let NERDTreeShowHidden=1
@@ -202,9 +219,9 @@ function Stave()
 	:set spell spelllang=nb
 	:syntax spell toplevel
 	:highlight clear SpellBad
-	:highlight SpellBad  ctermfg=DarkGrey
+	:highlight SpellBad  ctermbg=Yellow
 	:highlight clear SpellCap
-	:highlight SpellCap ctermfg=DarkGrey
+	:highlight SpellCap ctermbg=LightBlue
 	:highlight clear SpellRare
 	:highlight SpellRare ctermfg=DarkGrey
 	:highlight clear SpellLocal
@@ -212,10 +229,15 @@ function Stave()
 endfunction
 "Setter \S til å kjøre funksjonen Stave()
 nmap \S :exec Stave()<CR>
+autocmd FileType txt setlocal spell spelllang=nb 
+autocmd BufRead,BufNewFile *.txt call Stave()
+"call Stave()
 "
 "######################################################################################################
 "Clipboard. Bruker clipcoard til kopiering
 set clipboard=unnamedplus
+"
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 "
 "#######################################################################################################
 "Funksjon til å skrive ut som pdf

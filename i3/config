@@ -260,7 +260,7 @@ bindsym $W+d exec darktable
 bindsym $W+g exec gvim 
 bindsym $W+i exec vivaldi-stable %U 
 bindsym $W+k exec pysol
-bindsym $W+m exec smplayer
+bindsym $W+m exec vlc
 bindsym $W+n exec xpad
 bindsym $W+o exec opera
 bindsym $W+p exec libreoffice --impress
