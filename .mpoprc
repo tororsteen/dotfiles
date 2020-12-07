@@ -1,0 +1,18 @@
+# Set default values for all following accounts.
+defaults
+
+# Always use TLS.
+tls on
+
+# Deliver mail to a maildir folder:
+delivery maildir ~/Mail/
+
+# Konto
+account ellenors
+# Host name of the POP3 server
+host pop.online.no
+# Authentication. 
+user ellenors
+passwordeval gpg2 --no-tty -q -d ~/ellenors_passord.asc
+#Set a default account
+account default : ellenors

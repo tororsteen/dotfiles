@@ -66,6 +66,8 @@ export PATH=/usr/include/qt4/QtGui:$PATH
 export NO_AT_BRIDGE=1
 systemctl --user import-environment PATH
 source /usr/share/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 autoload -U zutil
 autoload -U compinit
 autoload -U complist
