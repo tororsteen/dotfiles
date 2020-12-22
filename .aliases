@@ -24,7 +24,7 @@ alias less='/usr/share/vim/vim82/macros/less.sh'
 alias Journal='sudo journalctl -b -p 3'
 #alias Mutt='neomutt'
 alias sway='XKB_DEFAULT_LAYOUT=no sway'
-alias HentPost='getmail && offlineimap'
+alias HentPost='mpop && offlineimap'
 alias Post='~/Mail/Ellenors'
 #ssh
 alias Bedehusgata28='ssh bedehusgata28.homelinux.net'

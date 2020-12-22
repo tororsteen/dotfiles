@@ -60,6 +60,7 @@ fi
 export TERM='xterm-256color'
 bindkey -v
 export EDITOR="vim"
+export RANGER_LOAD_DEFAULT_RC=FALSE
 export PATH=/home/tor/bin:$PATH
 export PATH=/usr/include/qt4/QtGui:$PATH
 # For å unngå unødvendige feilmeldinger i terminal 
