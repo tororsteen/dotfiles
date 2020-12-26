@@ -94,6 +94,13 @@ handle_extension() {
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
 
+        ## XLS
+        xls)
+            ## Preview as csv conversion
+            ## Uses: https://github.com/dilshod/xlsx2csv
+            xls2csv -- "${FILE_PATH}" && exit 5
+            exit 1;;
+
         ## DOC
 	doc)
             ## Preview as text conversion
