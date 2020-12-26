@@ -1,4 +1,4 @@
 #EXTM3U
-#MOCSERIAL: 1024
-#EXTINF:-1,https://ndr-ndr1niedersachsen-hannover.cast.addradio.de/ndr/ndr1niedersachsen/hannover/mp3/128/stream.mp3
-https://ndr-ndr1niedersachsen-hannover.cast.addradio.de/ndr/ndr1niedersachsen/hannover/mp3/128/stream.mp3
+#MOCSERIAL: 1792
+#EXTINF:-1,http://lyd.nrk.no:80/nrk_radio_p1_buskerud_aac_h?_hdr=0
+http://lyd.nrk.no:80/nrk_radio_p1_buskerud_aac_h?_hdr=0

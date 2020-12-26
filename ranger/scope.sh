@@ -94,6 +94,18 @@ handle_extension() {
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
 
+        ## DOC
+	doc)
+            ## Preview as text conversion
+            antiword "${FILE_PATH}" && exit 5
+            exit 1;;
+
+        ## DOCX
+	docx)
+            ## Preview as text conversion
+			docx2txt < "${FILE_PATH}" && exit 5
+            exit 1;;
+
         ## HTML
         htm|html|xhtml)
             ## Preview as text conversion
