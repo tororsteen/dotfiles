@@ -115,8 +115,8 @@ macro index S <tag-pattern>Magnor\ Glassverk<enter>\
 <tag-prefix><save-message>~/Mail/Ellenors/..Reklame<enter>\
 
 #Makro til å tagge Twitter og flytte til egen mappe
-macro index W <tag-pattern>info@twitter.com<enter>\
-<tag-prefix><save-message>~/Mail/Ellenors/..Twitter<enter>     
+#macro index W <tag-pattern>info@twitter.com<enter>\
+#<tag-prefix><save-message>~/Mail/Ellenors/..Twitter<enter>     
 
 #Makro som definerer G for å synkronisere Gmail
 macro index G "<shell-escape>offlineimap<enter>" "Synkroniserer G-mail"
