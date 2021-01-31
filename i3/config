@@ -264,7 +264,7 @@ bindsym $W+m exec vlc
 bindsym $W+n exec xpad
 bindsym $W+o exec opera
 bindsym $W+p exec libreoffice --impress
-bindsym $W+r exec gradio
+bindsym $W+s exec sakura -n 5
 bindsym $W+v exec pavucontrol
 bindsym $W+w exec libreoffice --writer
 bindsym $W+x exec libreoffice --calc
