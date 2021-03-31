@@ -202,8 +202,8 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute #demper 
 bindsym XF86AudioMute exec amixer set Master toggle #kutter lyd
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -265,6 +265,7 @@ bindsym $W+n exec xpad
 bindsym $W+o exec opera
 bindsym $W+p exec libreoffice --impress
 bindsym $W+s exec sakura -n 5
+bindsym $W+t exec terminator
 bindsym $W+v exec pavucontrol
 bindsym $W+w exec libreoffice --writer
 bindsym $W+x exec libreoffice --calc

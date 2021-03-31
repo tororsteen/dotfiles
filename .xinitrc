@@ -51,6 +51,7 @@ fi
 #Låser opp gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-
+#Starter dropbox
+/usr/bin/dropbox &
 #Starter i3
 exec i3

@@ -1,0 +1,21 @@
+#Bruker systemets utklipstavle
+set selection-clipboard clipboard
+#Viser scrollbar opp og ned
+set show-v-scrollbar true
+# Ctrl-P som hurtigtast for utskrift
+map <C-p> print
+# Gul farge for utheveing
+set highlight-color "#ffff6c"
+set highlight-active-color "#ffff00"
+#Bakgrunn på statusbar som på vindusramma
+set statusbar-bg "#444444"
+# Hvit skrift når vi skriver inn kommandoer
+set inputbar-fg "#FFFFFF"
+#10 pix mellom sidene 
+set page-padding 10
+# ~ isteden for /home/tor i statuslinja
+set statusbar-home-tilde true
+# filnavn, ikke full sti, i tittel på vinduet
+set window-title-basename true
+# Fix for at eksterne lenker skal fungere
+set sandbox none
