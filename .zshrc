@@ -74,4 +74,5 @@ autoload -U compinit
 autoload -U complist
 autoload -U zmv
 compinit
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 #echo -e ; archey 
