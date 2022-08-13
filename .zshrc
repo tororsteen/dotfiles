@@ -62,13 +62,13 @@ bindkey -v
 export EDITOR="vim"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export PATH=/home/tor/bin:$PATH
-export PATH=/usr/include/qt4/QtGui:$PATH
+export PATH=/usr/include/qt/QtGui:$PATH
 # For å unngå unødvendige feilmeldinger i terminal 
 export NO_AT_BRIDGE=1
 systemctl --user import-environment PATH
 source /usr/share/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
 autoload -U zutil
 autoload -U compinit
 autoload -U complist
