@@ -1,0 +1,9 @@
+application/msword; libreoffice --writer %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice --writer %s
+application/pdf; zathura %s
+application/vnd.ms-excel; libreoffice --calc %s;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice --calc %s
+image/*; viewnior %s
+application/vnd.ms-powerpoint; libreoffice --impress %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice --impress %s
+text/html; elinks -dump; copiousoutput;
