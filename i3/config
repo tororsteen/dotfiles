@@ -221,7 +221,7 @@ exec --no-startup-id systemctl --user start wm.target
 #exec --no-startup-id nm-applet 
 #Prøver å stoppe strømstyring og skjermblanking
 #exec --no-startup-id SetteXset
-exec --no-startup-id xscreensaver -no-splash
+#exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id (sudo spamd &)
 exec --no-startup-id (sudo systemctl start gpm.service)
 #exec --no-startup-id (sleep 4 && cairo-compmgr)
