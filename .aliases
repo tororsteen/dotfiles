@@ -58,6 +58,7 @@ alias TAV='tmux attach-session -t Vim'
 alias calNå='gcalcli agenda'
 alias calUke='gcalcli calw --monday'
 alias calMåned='gcalcli calm --monday'
+alias calNeste='calMåned $(date --date "1 month" "+%Y%m%d")'
 alias calNy="gcalcli add --calendar '63ecco@gmail.com'" 
 #trash (fra terminal)
 alias tp='trash-put'
