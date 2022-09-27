@@ -273,6 +273,7 @@ nnoremap \u @='i\emph{}<C-V><Esc>i'<CR>
 noremap ¤ $
 nmap d¤ d$ 
 imap ¤ $
+set backspace=indent,eol,start
 "Lagre som rot med :w!!
 "cmap w!! w !sudo tee % 
 cmap <C-K> Calendar -position=tab
