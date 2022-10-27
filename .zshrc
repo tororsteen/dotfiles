@@ -61,6 +61,7 @@ export TERM='xterm-256color'
 bindkey -v
 export EDITOR="vim"
 export BROWSER="vivaldi-stable"
+export BUKU_COLORS="jaeaf"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export PATH=/home/tor/bin:$PATH
 export PATH=/usr/include/qt/QtGui:$PATH
