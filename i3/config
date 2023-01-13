@@ -176,9 +176,13 @@ bindsym $mod+r mode "resize"
 bindsym $mod+ctrl+q exec /home/tor/bin/avslutt 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute #øker lydstyrke
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute #demper lydstyrke
-bindsym XF86AudioMute exec amixer set Master toggle #kutter lyd
+#bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute #øker lydstyrke
+#bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute #demper lydstyrke
+#bindsym XF86AudioMute exec amixer set Master toggle #kutter lyd
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1000  #øker lydstyrke
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1000  #demper lydstyrke
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle #kutter lyd
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 # increase screen brightness
