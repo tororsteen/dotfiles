@@ -197,6 +197,7 @@ set grepprg=grep\ -nH\ $*
 "#######################################################################################################
 "Kommandoer for LaTex
 let g:tex_flavor = "latex"
+let g:vimtex_view_method = 'zathura'
 "##########################################
 "Kommando for xelatex. Komenter ut forrige linje
 "let g:tex_flavor="xelatex"
