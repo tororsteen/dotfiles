@@ -9,6 +9,10 @@ alias lst='ls -ht --color=auto --group-directories-first'
 alias lalt='ls -Alt --color=auto -h --group-directories-first'
 alias llt='ls -lt --group-directories-first'
 alias lat='ls -At --group-directories-first'
+#Alias for exa - erstatning for ls
+alias els='exa -1 --group-directories-first'
+alias elal='exa -al --group-directories-first'
+alias ell='exa -l --group-directories-first'
 #Div. alias for å ha enkel skriving
 alias cd..='cd ..'
 alias cp='cp -i'
