@@ -43,7 +43,7 @@ ZSH_THEME="tors"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git vi-mode)
+plugins=(autojump git vi-mode zsh-autosuggestions)
 
 #Setter $ til Shift4
 #[[ -f /home/tor/.Xmodmap ]] && xmodmap /home/tor/.Xmodmap
