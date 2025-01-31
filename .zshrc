@@ -79,3 +79,6 @@ compinit
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 setopt correctall
 #echo -e ; archey 
+
+# Created by `pipx` on 2024-09-11 20:47:08
+export PATH="$PATH:/home/tor/.local/bin"

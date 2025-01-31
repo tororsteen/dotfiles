@@ -35,7 +35,7 @@ alias Post='~/Mail/Ellenors'
 alias TS='TermStart'
 #ssh
 alias Bedehusgata28='ssh bedehusgata28.homelinux.net'
-alias Bedehusgata30='ssh orsteen.dyndns-home.com'
+alias Bedehusgata30='ssh 92.220.144.3'
 alias Bedehusgata30X='ssh -X orsteen.dyndns-home.com'
 alias Bedehusgata='ssh 192.168.10.100' 
 alias BedehusgataX='ssh -X 192.168.10.100' 
@@ -44,7 +44,7 @@ alias TV-PC='ssh TV-PC'
 #pacman og pacaur
 alias install='sudo pacman -S'           # Install specific package(s) from the repositories
 alias remove='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias oppdater='sudo pacman -Syu && pikaur -Sua'
+alias oppdater='zsh /home/tor/bin/SysOppdat'
 alias pkglist="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 #systemctl
 alias sysstart='sudo systemctl start'

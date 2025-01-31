@@ -14,6 +14,9 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking! 
 "set compatible
+"
+let loaded_netrwPlugin = 1
+"
 "#####################################################################################################
 "Installasjon av Vundle;
 set nocompatible              " be iMproved, required
@@ -38,7 +41,7 @@ Plugin 'vim-airline/vim-airline-themes'		"Temaer for airline
 "Plugin 'colorsupport.vim'
 "Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'						"LaTex 
-Plugin 'Matt-Deacalion/vim-systemd-syntax' 	"Uthever syntaks i systemd-filer
+Plugin 'wgwoods/vim-systemd-syntax'			"Uthever syntaks i systemd-filer
 Plugin 'Townk/vim-autoclose'				"skriver ( og får automatisk ()
 Plugin 'WolfgangMehner/c-support'			"c og c++ verktøy
 Plugin 'NLKNguyen/papercolor-theme'			"Fargetema
