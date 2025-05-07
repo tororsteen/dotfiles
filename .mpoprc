@@ -15,6 +15,6 @@ host pop.online.no
 auth user
 user ellenors
 #passwordeval gpg --decrypt ~/ellenors_passord.gpg
-password smax234
+password skriver passord i klartekst hvis vi ikke krypterer
 #Set a default account
 account default : ellenors
