@@ -208,7 +208,7 @@ exec --no-startup-id nm-applet
 #exec --no-startup-id (sudo spamd &)  // Bruker ikke eget spam-filter mer
 #exec --no-startup-id (sudo systemctl start gpm.service) // Aktiveres igjen hvis vi installerer mus for bruk i konsoll (gpm)
 exec --no-startup-id (dbus-update-activation-environment --all)
-exec --no-startup-id (gnome-keyring-daemon --start --components=secrets)
+#exec --no-startup-id (gnome-keyring-daemon --start --components=secrets)
 exec --no-startup-id (/usr/bin/gnome-keyring-daemon --unlock)
 exec --no-startup-id (sleep 4 && picom)
 #exec --no-startup-id systemctl --user start composite
