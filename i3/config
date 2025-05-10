@@ -188,10 +188,10 @@ bindsym XF86AudioPrev exec playerctl previous
 #Det er definert egen systemd-target wm.target. Må startes hvis vi skal bruke timere osv. til e-pst slik dette er satt opp.
 exec --no-startup-id systemctl --user start wm.target
 
-#exec --no-startup-id /home/tor/Scripts/MonterPkg
-exec --no-startup-id /home/tor/Scripts/dollar
+#exec --no-startup-id /home/tor/Scripts/MonterPkg // Uaktuelt på ny maskin
+#xec --no-startup-id /home/tor/Scripts/dollar
 #Må kjøre på nm
-exec --no-startup-id nm-applet 
+#exec --no-startup-id nm-applet 
 #Prøver å stoppe strømstyring og skjermblanking
 #exec --no-startup-id SetteXset
 #exec --no-startup-id xscreensaver -no-splash
@@ -200,31 +200,31 @@ exec --no-startup-id nm-applet
 exec --no-startup-id (dbus-update-activation-environment --all)
 #exec --no-startup-id (gnome-keyring-daemon --start --components=secrets)
 exec --no-startup-id (/usr/bin/gnome-keyring-daemon --unlock)
-exec --no-startup-id (sleep 4 && picom)
+#exec --no-startup-id (sleep 4 && picom) // compositor startes fra systemd-service
 #exec --no-startup-id systemctl --user start composite
 #Kjører compton så lenge cairo-compgr ikke fungerer
 #exec --no-startup-id (sleep 4 && compton) 
-exec --no-startup-id tint2 -c $HOME/.config/i3/tint2.i3
-exec --no-startup-id udiskie --tray 
-exec --no-startup-id nitrogen --set-auto /home/tor/Bilder/Bakgrunnh24R.jpg
-#exec --no-startup-id dropbox
-#exec --no-startup-id systemctl --user start mindropbox
-exec --no-startup-id syndaemon -i 2 -d -k 
-#exec --no-startup-id (sleep 10 && numlockx on) 
-#exec --no-startup-id /opt/thefanclub/grive-tools/grive-indicator
-exec --no-startup-id parcellite
+#exec --no-startup-id tint2 -c $HOME/.config/i3/tint2.i3 // starter fra systemd-service
+#exec --no-startup-id udiskie --tray // starter fra systemd-service
+#exec --no-startup-id nitrogen --set-auto /home/tor/Bilder/Bakgrunnh24R.jpg // starter fra systemd-service
+#exec --no-startup-id dropbox // Bruker ikke dropbox mer
+#exec --no-startup-id systemctl --user start mindropbox // Brukes ikke mer
+#exec --no-startup-id syndaemon -i 2 -d -k // starter fra systemd-service
+#exec --no-startup-id (sleep 10 && numlockx on) // Har pt. ikke nummerisk tatstatur
+#exec --no-startup-id /opt/thefanclub/grive-tools/grive-indicator // Bruker ikke grive
+#exec --no-startup-id parcellite
 #exec --no-startup-id netmon
-exec --no-startup-id cbatticon
+#exec --no-startup-id cbatticon
 #exec --no-startup-id setxkbmap -option compose:menu
 #exec --no-startup-id (sleep 5 && conky -c /home/tor/.config/i3/conkyrc.i3)
 #exec --no-startup-id systemctl --user start conkystart
-exec --no-startup-id conky -c /home/tor/.config/i3/conky.conf
+#exec --no-startup-id conky -c /home/tor/.config/i3/conky.conf
 
 #Setter vanlige programmer til å starte på bestemte arbeidsområder
 #assign [class="^libreoffice-writer$"]3
 #assign [class="^libreoffice-calc$"]3
 #assign [class="^libreoffice-impress$"]3
-assign [class="^Google-chrome$"]1
+#assign [class="^Google-chrome$"]1 // Bruker ikke chrome mer
 assign [class="^Vivaldi-stable$"]1
 
 #Start av programmer med hurtigtast

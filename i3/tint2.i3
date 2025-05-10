@@ -66,7 +66,7 @@ startup_notifications = 1
 #launcher_item_app = /usr/share/applications/firefox.desktop
 #launcher_item_app = /usr/share/applications/iceweasel.desktop
 #launcher_item_app = /usr/share/applications/chromium-browser.desktop
-launcher_item_app = /usr/share/applications/google-chrome.desktop
+#launcher_item_app = /usr/share/applications/google-chrome.desktop
 launcher_item_app = /home/tor/Scripts/vivaldi.desktop
 launcher_item_app= /home/tor/Dokumenter/Data/Konfigurasjoner/xfce4-appfinder.desktop
 # Taskbar
