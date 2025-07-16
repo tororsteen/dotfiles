@@ -206,7 +206,7 @@ exec --no-startup-id (/usr/bin/gnome-keyring-daemon --unlock)
 #exec --no-startup-id (sleep 4 && compton) 
 #exec --no-startup-id tint2 -c $HOME/.config/i3/tint2.i3 // starter fra systemd-service
 #exec --no-startup-id udiskie --tray // starter fra systemd-service
-#exec --no-startup-id nitrogen --set-auto /home/tor/Bilder/Bakgrunnh24R.jpg // starter fra systemd-service
+#exec --no-startup-id nitrogen --set-auto /home/tor/Bilder/matpause.jpg 
 #exec --no-startup-id dropbox // Bruker ikke dropbox mer
 #exec --no-startup-id systemctl --user start mindropbox // Brukes ikke mer
 #exec --no-startup-id syndaemon -i 2 -d -k // starter fra systemd-service
