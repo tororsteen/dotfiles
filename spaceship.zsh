@@ -1,9 +1,19 @@
-# Display time
- SPACESHIP_TIME_SHOW=true
+# Vis klokke
+SPACESHIP_TIME_SHOW='true'
 
-# Display username always
-SPACESHIP_USER_SHOW=always
+# Vis brukernavn i grønt
+SPACESHIP_USER_SHOW='always'
+SPACESHIP_USER_COLOR='green'
+SPACESHIP_USER_PREFIX='som '
+SPACESHIP_USER_COLOR_ROOT='red'
 
-# Do not truncate path in repos
- SPACESHIP_DIR_TRUNC_REPO=false
+# Vis full sti
+SPACESHIP_DIR_TRUNC_REPO='false'
+SPACESHIP_DIR_TRUNC=0
+SPACESHIP_DIR_PREFIX='i '
 
+#Vis batteristatus
+SPACESHIP_BATTERY_SHOW='always'
+SPACESHIP_BATTERY_ASYNC='true'
+SPACESHIP_BATTERY_PREFIX='Bat '
+SPACESHIP_BATTERY_THRESHOLD=100
