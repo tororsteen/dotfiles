@@ -1,9 +1,9 @@
 SPACESHIP_PROMPT_ORDER=(
   time           # Time stamps section
   user           # Username sectionon
+  host           # Hostname section
   battery        # Battery level and status
   dir            # Current directory section
-  host           # Hostname section
   git            # Git section (git_branch + git_status)
   hg             # Mercurial section (hg_branch  + hg_status)
   package        # Package version
@@ -72,6 +72,10 @@ SPACESHIP_USER_SHOW='always'
 SPACESHIP_USER_COLOR='green'
 SPACESHIP_USER_PREFIX='som '
 SPACESHIP_USER_COLOR_ROOT='red'
+
+# Viser navnet til maskinen
+SPACESHIP_HOST_SHOW="always"
+SPACESHIP_HOST_PREFIX="på "
 
 # Vis full sti
 SPACESHIP_DIR_TRUNC_REPO='false'
