@@ -34,13 +34,6 @@ alias HentPost='mpop && offlineimap'
 alias Post='~/Mail/Ellenors'
 alias TS='TermStart'
 #ssh
-alias Bedehusgata28='ssh bedehusgata28.homelinux.net'
-alias Bedehusgata30='ssh 92.220.144.3'
-alias Bedehusgata30X='ssh -X orsteen.dyndns-home.com'
-alias Bedehusgata='ssh 192.168.10.100' 
-alias BedehusgataX='ssh -X 192.168.10.100' 
-alias Ellen='ssh ecco@192.168.10.101'
-alias TV-PC='ssh TV-PC'
 #pacman og pacaur
 alias install='sudo pacman -S'           # Install specific package(s) from the repositories
 alias remove='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
