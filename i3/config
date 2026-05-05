@@ -227,6 +227,9 @@ exec --no-startup-id (/usr/bin/gnome-keyring-daemon --unlock)
 #assign [class="^Google-chrome$"]1 // Bruker ikke chrome mer
 assign [class="^Vivaldi-stable$"]1
 
+#Starter Magnus i flytende vindu
+for_window [class="Magnus" instance="magnus"] floating enable
+
 #Start av programmer med hurtigtast
 #Setter Windowstasten som modifier for oppstart
 set $W Mod4
@@ -237,7 +240,7 @@ bindsym $W+d exec darktable
 bindsym $W+f exec thunar
 #bindsym $W+g exec gvim 
 bindsym $W+i exec vivaldi-stable  
-bindsym $W+k exec pysol
+bindsym $W+k exec kitty
 bindsym $W+m exec vlc
 #bindsym $W+n exec xpad
 bindsym $W+o exec ocrdesktop -l nor
