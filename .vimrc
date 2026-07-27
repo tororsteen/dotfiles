@@ -243,7 +243,9 @@ autocmd BufRead,BufNewFile *.txt call Stave()
 "
 "######################################################################################################
 "Clipboard. Bruker clipcoard til kopiering
+set clipmethod=wayland
 set clipboard=unnamedplus
+xnoremap "+y y:call system("wl-copy", @")<cr>
 "
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 "

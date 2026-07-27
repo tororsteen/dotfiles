@@ -5,13 +5,13 @@
 # Det er postbokser til lagring under Ellenors-mappa
 #
 # Setter header på melding
-set real_name   = "Tor Orsteen"
+set realname   = "Eiker bridgeklubb"
 set from       = "tororsteen@gmail.com"
 set use_from=yes
 #Vil ha mulighet til å redigere header
 set edit_headers = yes
 #Bruker vim som editor med stavekontroll
-set editor="vim -c 'set spell spelllang=nb tw=90 wrap'"
+set editor="vim -c 'set spell spelllang=nb tw=120 wrap'"
 
 set alias_file=~/.mutt/aliases
 source $alias_file
@@ -25,7 +25,7 @@ mime_lookup application/octet-stream
 #Bruker msmtp til å sende post
 set sendmail="/usr/bin/msmtp"
 
-set spool_file = ~/Mail/Gmail/INBOX
+set spoolfile = ~/Mail/Gmail/INBOX
 
 # Laster inn liste over postbokser
 source ~/.mutt/postbokser
@@ -80,8 +80,8 @@ bind index,pager <C-Down> sidebar-next
 bind index,pager \Co sidebar-open
 
 #Prompt for cc og bcc
-set ask_bcc=yes
-set ask_cc=yes
+set askbcc=yes
+set askcc=yes
 
 #Sorter etter tråder. Få nyeste meldinger først
 set sort = threads 
@@ -166,7 +166,7 @@ macro index G "<shell-escape>offlineimap<enter>" "Synkroniserer G-mail"
  set vfolder_format = "%6n(%6N) %f"
  # When set, NeoMutt will use the first virtual mailbox (see virtual-mailboxes)
  # as a spoolfile.
- set virtual_spool_file = no
+ set virtual_spoolfile = no
  # setup time window preferences
  # first setup the duration, and then the time unit of that duration
  # when set to 0 (the default) the search window feature is disabled
@@ -182,8 +182,8 @@ macro index G "<shell-escape>offlineimap<enter>" "Synkroniserer G-mail"
  # generate virtual folder from query
  bind index,pager \eX vfolder-from-query
  # generate virtual folder from query with time window
- bind index < vfolder-window-backward
- bind index > vfolder-window-forward
+ #bind index < vfolder-window-backward
+ #bind index > vfolder-window-forward
  # toggle between mailboxes and virtual mailboxes
  # bind index,pager ??? sidebar-toggle-virtual
  # --------------------------------------------------------------------------

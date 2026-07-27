@@ -57,10 +57,12 @@ if [ -f ~/.aliases ]
 		echo "Ingen alias lasta fra fil"
 fi
 # Customize to your needs...
-export TERM='xterm-256color'
+export TERM='xterm-kitty'
 bindkey -v
 export EDITOR="vim"
 export BROWSER="vivaldi-stable"
+#Vulkan
+export ANV_DEBUG=video-decode,video-encode
 export BUKU_COLORS="jIegf"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export PATH=/home/tor/bin:$PATH
