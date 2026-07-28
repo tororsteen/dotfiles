@@ -59,7 +59,7 @@ fi
 # Customize to your needs...
 export TERM='xterm-kitty'
 bindkey -v
-export EDITOR="vim"
+export EDITOR="nvim"
 export BROWSER="vivaldi-stable"
 #Vulkan
 export ANV_DEBUG=video-decode,video-encode

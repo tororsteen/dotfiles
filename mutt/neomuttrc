@@ -11,7 +11,7 @@ set use_from=yes
 #Vil ha mulighet til å redigere header
 set edit_headers = yes
 #Bruker vim som editor med stavekontroll
-set editor="vim -c 'set spell spelllang=nb tw=90 wrap'"
+set editor="nvim +8 -c 'set textwidth=72' -c 'set wrap' -c 'set spell spelllang=nb'"
 
 set alias_file=~/.mutt/aliases
 source $alias_file
