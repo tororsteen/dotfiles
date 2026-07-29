@@ -4,24 +4,13 @@
 -- EDIT THIS CONFIG ACCORDING TO THE WIKI INSTRUCTIONS.  --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
+-- Er tilpassa flere ganger
 
 ------------------
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- Forstørrer 1.2 fordi det er veldig fin oppløsning
 hl.monitor({
     output   = "eDP-1",
     mode     = "2880x1800@120.00100",
@@ -44,11 +33,6 @@ local menu        = "rofi -show drun"
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
  hl.on("hyprland.start", function () 
 	 hl.exec_cmd("hyprpm enable hyprbars")
      hl.exec_cmd("xfce4-notifyd")
@@ -63,8 +47,6 @@ local menu        = "rofi -show drun"
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
@@ -106,7 +88,6 @@ hl.env("DBUS_SESSION_BUS_ADDRESS", os.getenv("DBUS_SESSION_BUS_ADDRESS"))
 ---- LOOK AND FEEL ----
 -----------------------
 
--- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
         gaps_in  = 5,
@@ -245,7 +226,7 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout  = "no_custom",
+        kb_layout  = "no_custom", -- Laster fila /home/tor/.config/xkb/symbols/no_custom
         kb_variant = "",
         kb_model   = "",
         kb_options = "",

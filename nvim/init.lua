@@ -101,8 +101,35 @@ require("lazy").setup({
 },
 
 
-
   },
+
+  -- Neovim LSP Configurations
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      
+      -- Configure TexLab
+      lspconfig.texlab.setup({
+        settings = {
+          texlab = {
+            -- Disable TexLab's build engine so it does not conflict with VimTeX
+            build = {
+              executable = "",
+              args = {},
+              onSave = false,
+            },
+            -- Disable TexLab's forward search to let VimTeX handle PDF syncing
+            forwardSearch = {
+              executable = "",
+              args = {},
+            },
+          },
+        },
+      })
+    end,
+  },
+
 
 ---------- SLUTT PLUGINS--------------------------------------------------
 
@@ -127,3 +154,15 @@ vim.g.vimtex_view_method = "zathura"
 -- Esc fjerne utheving etter søk
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
 
+-- Configure and enable native LSP completion
+vim.opt.completeopt = { "menu", "menuone", "noselect", "popup" }
+vim.o.autocomplete = true -- Enable global auto-popup
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, args.data.client_id, args.buf, { autotrigger = true })
+    end
+  end,
+})
