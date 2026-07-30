@@ -4,10 +4,10 @@
 -- EDIT THIS CONFIG ACCORDING TO THE WIKI INSTRUCTIONS.  --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
--- Er tilpassa flere ganger
+-- Er tilpassa flere ganger og splitta i filer som ligger i undermappa modules
 
 ------------------
----- MONITORS ----
+---- MONITORS i monitors.lua
 ------------------
 
 require("modules.monitors")
@@ -16,51 +16,30 @@ require("modules.monitors")
 --- Autostart og ENVIRONMENT i grunnleggende.lua
 ------------------------------------------------------
 
-
-
-
-
-
-
+require("modules.grunnleggende")
 
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
 
--- Set programs that you use
+-- Viktige programmer får en lokal variabel. Må derfor gjentas i modulene som bruker variablene
 local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
-
-
-
-require("modules.grunnleggende")
- 
-
 
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
 
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
-
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
-
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
+-- Har ikke konfigurert med dette. Forslaget ligger i prerm.lua i modules
 
 
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
+
 require("modules.utseende")
+
 ----------------
 ----  MISC  ----
 ----------------
@@ -68,7 +47,7 @@ require("modules.utseende")
 hl.config({
     misc = {
         force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
 
@@ -76,7 +55,9 @@ hl.config({
 ---------------
 ---- INPUT ----
 ---------------
+
 require("modules.mus_tastatur")
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -106,10 +87,8 @@ end
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+require("modules.vindu_flater")
 
--- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
@@ -118,40 +97,6 @@ local suppressMaximizeRule = hl.window_rule({
 
     suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
-
-hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
-
-    no_focus = true,
-})
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
-
-    move  = "20 monitor_h-120",
-    float = true,
-})
-
 
 -- Velge layout på workspace
 hl.bind("SUPER + tab", function ()
@@ -185,7 +130,7 @@ end)
 
 -- Blar i vinduer med piltaster
 
-hl.bind("SUPER + right", function()
+hl.bind("ALT + right", function()
     local ws = hl.get_active_workspace()
     if ws and ws.tiled_layout == "monocle" then
         hl.dispatch(hl.dsp.layout("cyclenext"))
@@ -194,7 +139,7 @@ hl.bind("SUPER + right", function()
     end
 end, { description = "Cycle next window or focus down" })
 
-hl.bind("SUPER + left", function()
+hl.bind("ALT + left", function()
     local ws = hl.get_active_workspace()
     if ws and ws.tiled_layout == "monocle" then
         hl.dispatch(hl.dsp.layout("cycleprev"))
@@ -202,27 +147,6 @@ hl.bind("SUPER + left", function()
         hl.dispatch(hl.dsp.focus({ direction = "up" }))
     end
 end, { description = "Cycle previous window or focus up" })
-
-
----------PRØVER TABED / STACKED -------------
----
-hl.config({
-  group = {
-    insert_after_current = true,
-    groupbar = {
-      enabled = true,
-      font_size = 10,
-      col = {
-        active = "0x66ffff00",
-        inactive = "0x66777700"
-      }
-    }
-  }
-})
-
--- Toggle Tabbed/Stacked group for the current window
-hl.bind(mainMod .. " + G", hl.dsp.group.toggle(), { description = "Toggle window group" })
-
 
 ---------------------------------
 --- PLUGINS
