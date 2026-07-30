@@ -101,43 +101,35 @@ require("lazy").setup({
 },
 
 
-  },
+{'nvim-lua/plenary.nvim'},
 
-  -- Neovim LSP Configurations
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      
-      -- Configure TexLab
-      lspconfig.texlab.setup({
-        settings = {
-          texlab = {
-            -- Disable TexLab's build engine so it does not conflict with VimTeX
-            build = {
-              executable = "",
-              args = {},
-              onSave = false,
-            },
-            -- Disable TexLab's forward search to let VimTeX handle PDF syncing
-            forwardSearch = {
-              executable = "",
-              args = {},
-            },
-          },
-        },
-      })
-    end,
-  },
+{
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+},
+
+
+
+
 
 
 ---------- SLUTT PLUGINS--------------------------------------------------
+
+  },
+
+
 
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+----- Ikke nytt mellom linjene ---------------
 
 require('lualine').setup {
   options = {
@@ -166,3 +158,88 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- Bruker autocomplete i neomutt
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mail",
+  callback = function()
+    -- .,w,b: completes words from current buffer, windows, and other loaded buffers
+    -- k: completes words from dictionary (if spell checking is on)
+    vim.opt_local.complete = ".,w,b,k"
+    
+    -- (Optional) If you have a custom contact script or omnifunc
+    -- vim.opt_local.complete:append("o") 
+  end,
+})
+
+-- Åpner på samme sted som vi slapp
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  desc = "Open file at the last position it was edited earlier",
+  group = vim.api.nvim_create_augroup("RestoreCursorPosition", { clear = true }),
+  callback = function(args)
+    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+    local line_count = vim.api.nvim_buf_line_count(args.buf)
+    if mark[1] > 0 and mark[1] <= line_count then
+      vim.api.nvim_win_set_cursor(0, mark)
+    end
+  end,
+})
+
+-- Telescope setup
+
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
+
+telescope.setup({
+  defaults = {
+    prompt_prefix = "🔍 ",
+    selection_caret = " ",
+    path_display = { "smart" },
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        preview_width = 0.55,
+      },
+    },
+  },
+})
+
+-- Telescope bindinger
+
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
+
+-- Telescope søke i /home/tor
+vim.keymap.set('n', '<leader>ch', function()
+    require('telescope.builtin').find_files({ cwd = "~" })
+end, { desc = "Search home" })
+
+
+-- Telescope søke i /home/tor/Latex
+vim.keymap.set('n', '<leader>cl', function()
+    require('telescope.builtin').find_files({ cwd = "~/Latex" })
+end, { desc = "Search home/Latex" })
+
+
+-- Telescope søke i /home/tor/Dokumenter
+vim.keymap.set('n', '<leader>cd', function()
+    require('telescope.builtin').find_files({ cwd = "~/Dokumenter" })
+end, { desc = "Search home/tor/Dokumenter" })
+
+
+-- Telescope søke i /home/tor/Dokumenter/C_prog
+vim.keymap.set('n', '<leader>cc', function()
+    require('telescope.builtin').find_files({ cwd = "~/Dokumenter/C_prog" })
+end, { desc = "Search home/tor/Dokumenter/C_prog" })
+
+
+
+
