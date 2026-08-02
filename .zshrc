@@ -58,6 +58,7 @@ if [ -f ~/.aliases ]
 fi
 # Customize to your needs...
 export TERM='xterm-kitty'
+export VISUAL="nvim"
 bindkey -v
 export EDITOR="nvim"
 export BROWSER="vivaldi-stable"

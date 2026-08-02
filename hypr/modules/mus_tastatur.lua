@@ -33,3 +33,4 @@ hl.device({
     sensitivity = -0.5,
 })
 
+hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")

@@ -69,3 +69,4 @@ alias dos2unix="sed -i -e 's/'\"\$(printf '\015')\"'//g' "
 #neovim
 alias vim='nvim'
 alias vimdiff='nvim -d'
+

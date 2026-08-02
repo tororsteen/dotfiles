@@ -3,6 +3,8 @@
 -------------------
 
  hl.on("hyprland.start", function () 
+     hl.dsp.exec_cmd("hyprpm reload -n") 
+-- The -n flag provides desktop notifications for successful loads
 	 hl.exec_cmd("hyprpm enable hyprbars")
      hl.exec_cmd("xfce4-notifyd")
      hl.exec_cmd("nm-applet")
