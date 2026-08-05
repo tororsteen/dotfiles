@@ -1,0 +1,126 @@
+(defwindow sysmonitor
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "20px"
+                               :width "20%"
+                               :height "40%"
+                               :anchor "bottom right")
+           :stacking "bg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "normal"
+           :wm-ignore false
+
+  (main-layout)
+
+  )
+
+;;----------------------------- Widgets under denne linja
+
+
+
+(defpoll hostname :interval "24h" "uname -n")
+
+
+(defwidget host []
+  (box :class "host-box" :orientation "h" :space-evenly false
+    (label :xalign 0.5 :hexpand true :text hostname)
+  )
+)
+
+
+(defpoll idag :interval "15m" "date '+%A\ %d.\ %B\ %Y' ")
+
+
+(defwidget dato []
+  (box :class "dato-box" :orientation "h" :space-evenly false
+    (label :text idag)
+  )
+)
+
+(defpoll oppetid :interval "1m" "uptime -p")
+
+
+(defwidget oppe []
+  (box :class "oppe-box" :orientation "h" :space-evenly false
+    (label :xalign 0.5 :hexpand true  :text oppetid)
+  )
+)
+
+
+
+(defpoll time :interval "1s" "date +'%H:%M:%S'")
+
+(defwidget klokke []
+  (box :class "klokke-box" :orientation "h" :space-evenly false
+    (label  :xalign 0.5 :hexpand true :text time)
+  )
+)
+
+
+(defwidget battery []
+  (box :class "battery-box"
+    :orientation "h"
+    :space-evenly false
+    "Batteri: ${EWW_BATTERY.BAT0.capacity}% ${EWW_BATTERY.BAT0.status}"))
+
+
+(defwidget cpu-temp []
+  (box :class "temp-box" :orientation "h" :space-evenly false
+    (label :text "Temperatur ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C")
+  )
+)
+
+
+(defwidget ram []
+  (box :class "ram-box" :orientation "h" :space-evenly false
+(label :text "Bruk av RAM: ${round(EWW_RAM.used_mem_perc, 0)}%")
+  )
+)
+
+
+(defwidget rambar []
+    (progress :value {EWW_RAM.used_mem_perc} :orientation "h")
+  )
+
+
+(defpoll diskbruk :interval "1m" "df -h / | awk 'NR==2 {print $5}' ")
+
+(defwidget disk []
+  (box :class "disk-box" :orientation "h" :space-evenly false
+    (label :text "Bruk av disk: ${diskbruk}")
+  )
+)
+
+(defpoll ekstern_ip :interval "30m" "curl -s https://api.ipify.org")
+
+
+(defwidget IP []
+  (box :class "IP-box" :orientation "h" :space-evenly false
+    (label :text "Ekstern IP: ${ekstern_ip}")
+  )
+)
+
+
+(defpoll ulest :interval "3m" "zsh /home/tor/Scripts/SjekkPost")
+
+(defwidget post []
+  (box :class "post-box" :orientation "h" :space-evenly false
+    (label :text "Uleste meldinger:  ${ulest}")
+  )
+)
+
+
+(defwidget main-layout []
+  (box :orientation "v" :space-evenly false :halign "center" :spacing 10
+    (host)
+    (oppe)
+    (dato)
+    (klokke)
+    (cpu-temp)
+    (battery)
+    (ram)
+    (rambar)
+    (disk)
+    (IP)
+    (post)
+   ))

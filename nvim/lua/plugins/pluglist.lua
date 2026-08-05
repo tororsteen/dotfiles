@@ -19,6 +19,8 @@ return {
     end,
     },
 
+    { "elkowar/yuck.vim" }
+
 -- VimTeX i egen fil 
 
 -- Telescope i egen fil

@@ -9,7 +9,8 @@
      hl.exec_cmd("xfce4-notifyd")
      hl.exec_cmd("nm-applet")
      hl.exec_cmd("/usr/bin/udiskie --tray")
-	 hl.exec_cmd [[conky --config=/home/tor/.config/hypr/conkyrc.hyp]]    
+	 --hl.exec_cmd [[conky --config=/home/tor/.config/hypr/conky.lua]]    
+     hl.exec_cmd [[eww --force-wayland open sysmonitor]]    
 	 hl.exec_cmd [[wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"]]
      hl. exec_cmd("waybar & hyprpaper") 
  end)
