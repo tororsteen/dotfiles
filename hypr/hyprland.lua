@@ -151,4 +151,6 @@ end, { description = "Cycle previous window or focus up" })
 ---------------------------------
 --- PLUGINS
 ---------------------------------
-
+-- Ensure the plugin section is safely evaluated if loaded
+-- hyprbars er konfigurert i plugins.lua
+require("modules.plugins")

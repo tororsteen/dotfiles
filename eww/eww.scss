@@ -1,30 +1,61 @@
+// Setter vinduets bakgrunn til grått og 80% transparent
 window {
-  background-color: rgba(60, 60, 60, 0.8); // Fixes the base Eww window background
+  background-color: rgba(60, 60, 60, 0.8); 
 }
 
+// Ordner tekststørrelse og farge for alle tekstene
 .host-box { color: #F2F2B6; }
 .host-box { font-size: 64px; }
 
 .oppe-box { color: #FFFFFF; }
 .oppe-box { font-size: 24px }
+
 .dato-box { color: #FFFFFF; }
 .dato-box { font-size: 32px; }
 
 .temp-box { color: #FFFFFF; }
 .temp-box { font-size: 32px; }
 
-
 .battery-box { color: #FFFFFF; }
 .battery-box { font-size: 32px; }
+
 .klokke-box { color: #FFFFFF; }
 .klokke-box { font-size: 32px; }
 
 .ram-box { color: #FFFFFF; }
 .ram-box { font-size: 32px; }
+
 .disk-box { color: #FFFFFF; }
 .disk-box { font-size: 32px; }
 
 .IP-box { color: #FFFFFF; }
 .IP-box { font-size: 32px; }
-.post-box { color: #FFFFFF; }
-.post-box { font-size: 32px; }
+
+// Post hvis ingen nye = hvit tekst
+.ingen-nye { color: #FFFFFF;}
+.ingen-nye { font-size: 32px;}
+
+// Post hvis nye = rød tekst
+.nye { color: #e32424;}
+.nye { font-size: 32px;}
+
+//Farhe på bar for bruk av disk og ram avhengig av bruken
+.disk-lav {
+  trough > progress { background-color: #32c728; } // Grønn
+}
+.disk-mid {
+  trough > progress { background-color: #e68e1c; } // Orange
+}
+.disk-hoy {
+  trough > progress { background-color: #e32424; } // Rød
+}
+
+.ram-lav {
+  trough > progress { background-color: #32c728; } // Grønn
+}
+.ram-mid {
+  trough > progress { background-color: #e68e1c; } // Orange
+}
+.ram-hoy {
+  trough > progress { background-color: #e32424; } // Rød
+}

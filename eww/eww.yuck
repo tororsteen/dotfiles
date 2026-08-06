@@ -1,7 +1,8 @@
+; definerer et vindu i nedre høyre hjørne 10 px fra skjermkanten
 (defwindow sysmonitor
            :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "20px"
+           :geometry (geometry :x "10px"
+                               :y "10px"
                                :width "20%"
                                :height "40%"
                                :anchor "bottom right")
@@ -10,7 +11,7 @@
            :windowtype "normal"
            :wm-ignore false
 
-  (main-layout)
+  (main-layout) ;et samlewidget som legger inn alle de andre
 
   )
 
@@ -18,93 +19,110 @@
 
 
 
-(defpoll hostname :interval "24h" "uname -n")
+(defpoll hostname :interval "24h" "uname -n") ; bruker uname til å finne maskinens navn
 
-
+; skriver ut maskinens navn
 (defwidget host []
   (box :class "host-box" :orientation "h" :space-evenly false
-    (label :xalign 0.5 :hexpand true :text hostname)
+    (label :xalign 0.5 :hexpand true :text hostname)  ;midtstilt tekst
   )
 )
 
-
+;Finner dato torsdag 06. august 2026
 (defpoll idag :interval "15m" "date '+%A\ %d.\ %B\ %Y' ")
 
-
+;skriver ut dato
 (defwidget dato []
   (box :class "dato-box" :orientation "h" :space-evenly false
     (label :text idag)
   )
 )
 
+;Finner oppetid
 (defpoll oppetid :interval "1m" "uptime -p")
 
-
+;Skriver ut oppetid
 (defwidget oppe []
   (box :class "oppe-box" :orientation "h" :space-evenly false
     (label :xalign 0.5 :hexpand true  :text oppetid)
   )
 )
 
-
-
+; Henter klokkeskett som 11.05.25 i timer min og sek
 (defpoll time :interval "1s" "date +'%H:%M:%S'")
 
+;Viser klokkeslett på skjermen
 (defwidget klokke []
   (box :class "klokke-box" :orientation "h" :space-evenly false
     (label  :xalign 0.5 :hexpand true :text time)
   )
 )
 
-
+;Viser batteriets tilstand med innebygget funksjon
 (defwidget battery []
   (box :class "battery-box"
     :orientation "h"
     :space-evenly false
     "Batteri: ${EWW_BATTERY.BAT0.capacity}% ${EWW_BATTERY.BAT0.status}"))
 
-
+; Viser temperatur på prosessor med innebygget funksjon
 (defwidget cpu-temp []
   (box :class "temp-box" :orientation "h" :space-evenly false
     (label :text "Temperatur ${EWW_TEMPS.CORETEMP_PACKAGE_ID_0}°C")
   )
 )
 
-
+;Viser bruk av RAM med innebygget funksjon
 (defwidget ram []
   (box :class "ram-box" :orientation "h" :space-evenly false
 (label :text "Bruk av RAM: ${round(EWW_RAM.used_mem_perc, 0)}%")
   )
 )
 
+; rambruk funnet fra systemet for å lage en bar med farger
+(defpoll rambruk :interval "2s" "awk '/MemTotal/ {total=$2} /MemAvailable/ {available=$2} END {print (total-available)/total*100}' /proc/meminfo")
 
+; Viser en bar med bruk av RAM. Skifter farge
 (defwidget rambar []
-    (progress :value {EWW_RAM.used_mem_perc} :orientation "h")
+   (progress 
+  :class {rambruk < 30 ? "ram-lav" : rambruk < 75 ? "ram-mid" : "ram-hoy"}
+  :value rambruk)
   )
 
+;Finner diskbruk. Innebygget funksjon går dårlig med btrfs
+(defpoll diskbruk :interval "1m" "df -h / | awk 'NR==2 {print $5}' | sed 's/.$//'")
 
-(defpoll diskbruk :interval "1m" "df -h / | awk 'NR==2 {print $5}' ")
-
+;Viser diskbruk
 (defwidget disk []
   (box :class "disk-box" :orientation "h" :space-evenly false
-    (label :text "Bruk av disk: ${diskbruk}")
+    (label :text "Bruk av disk: ${diskbruk}%")
   )
 )
 
+;Viser diskbruk med bar som bytter farge
+(defwidget diskbar []
+   (progress 
+  :class {diskbruk < 30 ? "disk-lav" : diskbruk < 75 ? "disk-mid" : "disk-hoy"}
+  :value diskbruk)
+  )
+
+;Finner ekstern IP
 (defpoll ekstern_ip :interval "30m" "curl -s https://api.ipify.org")
 
-
+;Skriver ekstern IP
 (defwidget IP []
   (box :class "IP-box" :orientation "h" :space-evenly false
     (label :text "Ekstern IP: ${ekstern_ip}")
   )
 )
 
-
+;Finner antall uleste e-postmeldinger
 (defpoll ulest :interval "3m" "zsh /home/tor/Scripts/SjekkPost")
 
+;Skriver på skjermen. Rødt hvis det er uleste meldinger
 (defwidget post []
-  (box :class "post-box" :orientation "h" :space-evenly false
+  (box :class {ulest < 1 ? "ingen-nye" : "nye"}
+       :orientation "h" :space-evenly false
     (label :text "Uleste meldinger:  ${ulest}")
   )
 )
@@ -121,6 +139,7 @@
     (ram)
     (rambar)
     (disk)
+    (diskbar)
     (IP)
     (post)
    ))
