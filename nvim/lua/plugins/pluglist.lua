@@ -25,4 +25,6 @@ return {
 
 -- Telescope i egen fil
 
+-- Other-nvim i egen fil
+
 }   

@@ -12,7 +12,8 @@
 	 --hl.exec_cmd [[conky --config=/home/tor/.config/hypr/conky.lua]]    
      hl.exec_cmd [[eww --force-wayland open sysmonitor]]    
 	 hl.exec_cmd [[wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"]]
-     hl. exec_cmd("waybar & hyprpaper") 
+     hl.exec_cmd("waybar & hyprpaper") 
+     hl.exec_cmd("hypridle")
  end)
 
 -------------------------------

@@ -1,5 +1,5 @@
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
@@ -53,7 +53,10 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+-- ALT + Left Click (Quick Tap): Skift til full skjerm
+hl.bind("ALT + mouse:272", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { mouse = true, click = true })
 
+--hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })

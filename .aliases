@@ -69,4 +69,5 @@ alias dos2unix="sed -i -e 's/'\"\$(printf '\015')\"'//g' "
 #neovim
 alias vim='nvim'
 alias vimdiff='nvim -d'
-
+#Brukes til å forminske bilder til 3 cm i høyde i Latex
+alias forminsk='magick mogrify -units PixelsPerCentimeter -density 300 -resize x300'

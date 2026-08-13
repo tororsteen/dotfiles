@@ -48,7 +48,7 @@ require('lualine').setup {
  -- Bindinger og konfigurasjoner.
 --------------------------- 
 --Latex
-local tele_conf = require("config.latex_conf")
+local latex_conf = require("config.latex_conf")
 -- Neomutt
 local nmutt = require("config.nmutt")
 -- Telescope

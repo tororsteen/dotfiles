@@ -1362,8 +1362,22 @@
 
 #: }}}
 
-#: Tab bar {{{
 
+mouse_map ctrl+left press ungrabbed,grabbed next_tab
+mouse_map ctrl+right press ungrabbed,grabbed previous_tab
+map alt+1 goto_tab 1
+map alt+2 goto_tab 2
+map alt+3 goto_tab 3
+map alt+4 goto_tab 4
+map alt+5 goto_tab 5
+
+ Tab bar {{{
+tab_bar_style custom
+# This is still used since i call `draw_tab_with_powerline` in tab_bar.py
+tab_powerline_style round
+tab_bar_align center
+tab_bar_min_tabs 1
+tab_title_max_length 0
 # tab_bar_edge bottom
 
 #: The edge to show the tab bar on, top or bottom.
@@ -1385,12 +1399,12 @@
 
 #: fade
 #:     Each tab's edges fade into the background color. (See also tab_fade)
-#: slant
+#;  slant
 #:     Tabs look like the tabs in a physical file.
-#: separator
+#:  separator
 #:     Tabs are separated by a configurable separator. (See also
 #:     tab_separator)
-#: powerline
+#:  powerline
 #:     Tabs are shown as a continuous line with "fancy" separators.
 #:     (See also tab_powerline_style)
 #: custom
@@ -1447,7 +1461,7 @@
 #: can change the number of cells used by adding/removing entries to
 #: this list.
 
-# tab_separator " ┇"
+#: tab_separator " ┇"
 
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
@@ -1575,12 +1589,11 @@
 #: compositors that support xdg-toplevel-drag
 #: <https://wayland.app/protocols/xdg-toplevel-drag-v1>.
 
-#: }}}
+ }}}
 
 #: Color scheme {{{
-
- foreground #000000
- background #FFFFFF
+# foreground #000000
+# background #FFFFFF
 
 #: The foreground and background colors.
 
@@ -1877,7 +1890,7 @@
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+ allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -2432,6 +2445,8 @@
 #::  action will copy if there is a selection and pass the key through
 #::  to the application running in the terminal if there is no
 #::  selection.
+
+map ctrl+C  copy_or_interrupt
 
 #: Copy to clipboard or pass through
 
@@ -3152,8 +3167,14 @@
 
 
 # BEGIN_KITTY_FONTS
-font_family      family='Terminess Nerd Font' style=Bold
+font_family      family="GeistMono Nerd Font"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
+
+
+# BEGIN_KITTY_THEME
+# Spring
+include current-theme.conf
+# END_KITTY_THEME

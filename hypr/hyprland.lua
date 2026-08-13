@@ -61,8 +61,7 @@ require("modules.mus_tastatur")
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-
-require("modules.bindinger")
+ require("modules.bindinger")
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 

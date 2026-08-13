@@ -17,7 +17,6 @@ hl.config({
             -- Layout and behavior
             bar_part_of_window = true,
             bar_precedence_over_border = true,
-
         }
     }
 })
