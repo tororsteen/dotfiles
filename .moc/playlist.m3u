@@ -1,0 +1,70 @@
+#EXTM3U
+#MOCSERIAL: 256
+#EXTINF:222,Div - Vi er många (Sången om kvinnor)
+/home/tor/Musikk/Vi_er_många.mp3
+#EXTINF:294,11 Björn Afzelius - Juanita (Den röda tråden)
+/home/tor/Musikk/Björn_Afzelius/Den_röda_tråden/11-Juanita.mp3
+#EXTINF:216,12 Björn Afzelius - Ikaros (Den röda tråden)
+/home/tor/Musikk/Björn_Afzelius/Den_röda_tråden/12-Ikaros.mp3
+#EXTINF:256,DDE - Den tryggeste losen
+/home/tor/Musikk/DDE/DDE-Den_tryggeste_losen.mp3
+#EXTINF:303,DDE - Det Umulige E Mulig
+/home/tor/Musikk/DDE/DDE-Det_Umulige_E_Mulig.mp3
+#EXTINF:302,DDE - E6
+/home/tor/Musikk/DDE/DDE-E6.mp3
+#EXTINF:284,DDE - Vinsjan på kaia
+/home/tor/Musikk/DDE/DDE-Vinsjan_på_kaia.mp3
+#EXTINF:256,/home/tor/Musikk/DDE/Her_blir_det_liv/D.D.E.Leia_e_livet.mp3
+/home/tor/Musikk/DDE/Her_blir_det_liv/D.D.E.Leia_e_livet.mp3
+#EXTINF:206,/home/tor/Musikk/DDE/Her_blir_det_liv/D.D.E.By_n_æ_bor_i.mp3
+/home/tor/Musikk/DDE/Her_blir_det_liv/D.D.E.By_n_æ_bor_i.mp3
+#EXTINF:195,1 Veslemøy Solberg - Din Tanke Er Fri (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/01-Din_Tanke_Er_Fri.mp3
+#EXTINF:159,4 Ronni Le Tekrø - Gategutt (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/04-Gategutt.mp3
+#EXTINF:176,5 Geir Rebbestad - Revolusjonens Røst (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/05-Revolusjonens_Røst.mp3
+#EXTINF:253,7 Jannicke Kruse - Til Ungdommen (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/07-Til_Ungdommen.mp3
+#EXTINF:205,8 Kirsten Bråten Berg - De Unge Slekter (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/08-De_Unge_Slekter.mp3
+#EXTINF:212,10 Vestlandsfanden - Gutta På Golvet (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/10-Gutta_På_Golvet.mp3
+#EXTINF:167,12 Terje Tysland - Samholdssangen (Den Røde Gitar - Arbeidersanger I Ny Drakt)
+/home/tor/Musikk/Den_røde_gitaren/12-Samholdssangen.mp3
+#EXTINF:175,Den Fiori - Blowin' in then Wind
+/home/tor/Musikk/Desembersamling_Eknes/Den_Fiori-Blowin_in_then_Wind.mp3
+#EXTINF:171,/home/tor/Musikk/Desembersamling_Eknes/Frihetens_forpost.mp3
+/home/tor/Musikk/Desembersamling_Eknes/Frihetens_forpost.mp3
+#EXTINF:225,Gro Anita Schønn - En enkel sang om frihet
+/home/tor/Musikk/Desembersamling_Eknes/Gro_Anita_Schønn-En_enkel_sang_om_frihet.mp3
+#EXTINF:139,Hep Stars - I natt jag drøde nogot som
+/home/tor/Musikk/Desembersamling_Eknes/Hep_Stars-I_natt_jag_drøde_nogot_som.mp3
+#EXTINF:91,Fredssang
+/home/tor/Musikk/Desembersamling_Eknes/Ukjent_artist-Fredssang.mp3
+#EXTINF:131,Erik Bye - Tømmerkoievise (Der skulle vi ha vøri, Kal) (Hildringstimer)
+/home/tor/Musikk/Erik_Bye/Hildringstimer/Tømmerkoievise-Der_skulle_vi_ha_vøri,_Kal.mp3
+#EXTINF:222,Finn Kalvik - I mellom to evigheter (I mellom to evigheter)
+/home/tor/Musikk/Finn_Kalvik/Mellom_to_evigheter.mp3
+#EXTINF:184,1 Harry Belafonte - Day-O (Banana Boat Song) (The Best of Harry Belafonte Disc 1)
+/home/tor/Musikk/Harry_Belafonte-The_Best_of-2-CD-TFM-2011/Harry_Belafonte-The_Best_of_Harry_Belafonte_Disc_1/01.Day-O-Banana_Boat_Song.mp3
+#EXTINF:181,3 Harry Belafonte - Jamaica Farewell (The Best of Harry Belafonte Disc 1)
+/home/tor/Musikk/Harry_Belafonte-The_Best_of-2-CD-TFM-2011/Harry_Belafonte-The_Best_of_Harry_Belafonte_Disc_1/03.Jamaica_Farewell.mp3
+#EXTINF:202,9 Harry Belafonte - Island in the Sun (The Best of Harry Belafonte Disc 2)
+/home/tor/Musikk/Harry_Belafonte-The_Best_of-2-CD-TFM-2011/Harry_Belafonte-The_Best_of_Harry_Belafonte_Disc_2/09.Island_in_the_Sun.mp3
+#EXTINF:219,Inger Lise Rypdal - En spennende dag for Josefine (Det beste jeg vet)
+/home/tor/Musikk/Inger_Lise_Rypdal/Det_beste_jeg_vet/En_spennende_dag_for_Josefine.mp3
+#EXTINF:191,Inger Lise Rypdal - Fru Johnsen (Det beste jeg vet)
+/home/tor/Musikk/Inger_Lise_Rypdal/Det_beste_jeg_vet/Fru_Johnsen.mp3
+#EXTINF:295,Inger Lise Rypdal - Gråt ikke mer Argentina (Det beste jeg vet)
+/home/tor/Musikk/Inger_Lise_Rypdal/Det_beste_jeg_vet/Gråt_ikke_mer_Argentina.mp3
+#EXTINF:219,Jack Berntsen - Kor e hammaren, Edvard
+/home/tor/Musikk/Jack_Berntsen/Kor_e_hammaren,_Edvard.mp3
+#EXTINF:274,1 Janis Joplin - Me And Bobby McGee (Absolute Janis)
+/home/tor/Musikk/Janis_Joplin/Absolute_Janis/Disc_2/Disc_2-1-Me_And_Bobby_McGee.mp3
+#EXTINF:235,Kari Bremnes - Svarta Bjørn (Folk i Husan)
+/home/tor/Musikk/Kari_Bremnes/Svarta_Bjørn.mp3
+#EXTINF:172,Valkyrien Allstarts - Å eg veit meg eit land
+/home/tor/Musikk/Valkyrien_Allstarts/Å_eg_veit_meg_eit_land.mp3
+#EXTINF:169,23 Vømmøl Spellmannslag - Itjnå som kjem tå seg sjøl (Vømmøl Spellmannslag)
+/home/tor/Musikk/Vømmøl/Hans_Rotmo-Itjnå_som_kjæm_tå_seg_sjøl.mp3
