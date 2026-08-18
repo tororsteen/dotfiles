@@ -1,8 +1,5 @@
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local terminal    = "kitty"
-local fileManager = "thunar"
-local menu        = "rofi -show drun"
+-- mainMod = "SUPER"  Setter "Windows"-tast som hovedtast i hyprland.lua 
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("audacity"))
@@ -22,7 +19,7 @@ hl.bind(mainMod .. " + G", hl.dsp.group.toggle(), { description = "Toggle window
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("vlc"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("OCR4Linux"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("libreoffice --impress"))
-hl.bind(mainMod .. " +SHIFT + P", hl.dsp.exec_cmd("hyprpicker"))
+hl.bind(mainMod .. " +SHIFT + P", hl.dsp.exec_cmd("hyprpicker --autocopy"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 -- Example special workspace (scratchpad)

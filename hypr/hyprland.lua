@@ -22,10 +22,10 @@ require("modules.grunnleggende")
 ---- MY PROGRAMS ----
 ---------------------
 
--- Viktige programmer får en lokal variabel. Må derfor gjentas i modulene som bruker variablene
-local terminal    = "kitty"
-local fileManager = "thunar"
-local menu        = "rofi -show drun"
+-- Viktige programmer får en variabel.
+terminal    = "kitty"
+fileManager = "thunar"
+menu        = "rofi -show drun"
 
 -----------------------
 ----- PERMISSIONS -----
@@ -61,9 +61,10 @@ require("modules.mus_tastatur")
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
+
+mainMod = "SUPER" -- Sets "Windows" key as main modifier
  require("modules.bindinger")
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 --[[
