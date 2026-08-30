@@ -16,6 +16,7 @@ hl.bind(
 )
 -- Toggle Tabbed/Stacked group for the current window
 hl.bind(mainMod .. " + G", hl.dsp.group.toggle(), { description = "Toggle window group" })
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("kitten quick-access-terminal"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("vlc"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("OCR4Linux"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("libreoffice --impress"))

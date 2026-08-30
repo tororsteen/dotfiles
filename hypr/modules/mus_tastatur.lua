@@ -34,3 +34,4 @@ hl.gesture({
 --})
 
 hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
+hl.env("HYPRCURSOR_SIZE", "36")
