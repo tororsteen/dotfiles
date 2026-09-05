@@ -21,7 +21,8 @@ vim.g.vimtex_view_method = "zathura"
  "\\begin{wrapfigure}{l}{0.25\\textwidth}",
    "\\centering",
    "\\includegraphics[width=0.23\\textwidth]{.jpg}",
- "\\end{wrapfigure}"
+    "\\caption*{bilde}",
+    "\\end{wrapfigure}"
    }, "l", true, true)
  end
 
