@@ -21,10 +21,12 @@ return {
 
     { "elkowar/yuck.vim" }
 
--- VimTeX i egen fil 
-
--- Telescope i egen fil
-
--- Other-nvim i egen fil
-
-}   
+}
+ -- Disse har egne filer under /lua/plugins/pluglist.lua
+    -- gitsigns.lua
+    -- lsp.lua
+    -- neogit.lua
+    -- nvim-cmp.lua
+    -- other_nvim.lua
+    -- telescope.lua
+    -- vimtex.lua

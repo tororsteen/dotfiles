@@ -26,7 +26,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
       --HER KOMMER PLUGGINS------------------------------------------------
- { import = "plugins" }, -- alle plugins unntatt Telescope og VimTex er samla i ./lua/plugins/pluglist.lua
+ { import = "plugins" }, 
+ -- enkle plugins  er samla i ./lua/plugins/pluglist.lua
+ -- Disse har egne filer under /lua/plugins/pluglist.lua
+    -- gitsigns.lua
+    -- lsp.lua
+    -- neogit.lua
+    -- nvim-cmp.lua
+    -- other_nvim.lua
+    -- telescope.lua
+    -- vimtex.lua
 ---------- SLUTT PLUGINS--------------------------------------------------
   },
   -- colorscheme that will be used when installing plugins.
