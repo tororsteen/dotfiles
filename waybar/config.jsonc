@@ -53,7 +53,10 @@
 
 "hyprland/workspaces": {
     "format": "{icon}",
-    "on-click": "activate"
+    "on-click": "activate",
+    "all-outputs": true,
+    "active-only": false,
+    "sort-by-number": true
 },
 
 "hyprland/window": {
