@@ -17,17 +17,15 @@
     "icons": "light",
     "css-name": "panel-top",
     "modules-left": [
-      "button-sample",
+      "hyprland-workspaces",
       "playerctl",
-      "hyprland-workspaces"
-    ],
-    "modules-center": [
-      "brightness-slider",
       "hyprland-taskbar"
     ],
-    "modules-right": [
-      "tray",
+    "modules-center": [
       "clock"
+    ],
+    "modules-right": [
+      "tray"
     ],
     "controls-settings": {
       "components": [

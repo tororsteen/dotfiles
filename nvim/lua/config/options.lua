@@ -28,3 +28,6 @@ vim.lsp.document_color.enable(true)
 -- Smart søk med tanke på store bokstaver først i ord
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- Backspace oppfører seg som i andre teksteditorer
+vim.opt.backspace = "indent,eol,start"
