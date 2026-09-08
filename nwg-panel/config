@@ -155,7 +155,8 @@
       "label": "",
       "label-position": "right",
       "css-name": "button-custom",
-      "icon-size": 16
+      "icon-size": 16,
+      "tooltip": ""
     },
     "menu-start": "off",
     "exclusive-zone": true,
@@ -177,6 +178,26 @@
     "keyboard-layout": {},
     "niri-taskbar": {},
     "random-wallpaper": {},
-    "pinned": {}
+    "pinned": {},
+    "menu-start-settings": {
+      "cmd-lock": "swaylock -f -c 000000",
+      "cmd-logout": "hyprshutdown",
+      "cmd-restart": "systemctl reboot",
+      "cmd-shutdown": "systemctl -i poweroff",
+      "autohide": true,
+      "file-manager": "thunar",
+      "icon-size-large": 32,
+      "icon-size-small": 16,
+      "icon-size-button": 16,
+      "margin-bottom": 0,
+      "margin-left": 0,
+      "margin-right": 0,
+      "margin-top": 0,
+      "padding": 2,
+      "terminal": "kitty",
+      "run-through-compositor": true,
+      "hover-opens-submenu": false,
+      "click-outside-closes": false
+    }
   }
 ]

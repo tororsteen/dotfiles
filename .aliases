@@ -46,7 +46,7 @@ alias sysenable='sudo systemctl enable'
 alias sysdisable='sudo systemctl disable'
 alias sysstatus='sudo systemctl status'
 #gcalcli-kommandoer
-alias calNå='gcalcli agenda'
+alias calNå='gcalcli agenda $(date +%m/%d) $(date -d "+30 days" +%m/%d)'
 alias calUke='gcalcli calw --monday'
 alias calMåned='gcalcli calm --monday'
 alias calNeste='calMåned $(date --date "1 month" "+%Y%m%d")'
