@@ -33,5 +33,6 @@ hl.gesture({
 --    sensitivity = -0.5,
 --})
 
-hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
-hl.env("HYPRCURSOR_SIZE", "36")
+hl.env("HYPRCURSOR_THEME", "Future-Cyan")
+--hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
+hl.env("HYPRCURSOR_SIZE", "96")
