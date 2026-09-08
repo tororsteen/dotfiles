@@ -1,0 +1,3 @@
+# Exclude sensitive configuration file
+/home/tor/dotfiles/nvim/lua/plugins/kalender.lua
+
