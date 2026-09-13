@@ -1,5 +1,5 @@
 {
-  "autoclose.nvim": { "branch": "main", "commit": "27063904b2238ce7867e430885b6abcfb08357ea" },
+  "autoclose.nvim": { "branch": "main", "commit": "bcad8e84d9cd78ba73433cb396b68e489af11e31" },
   "baleia.nvim": { "branch": "main", "commit": "710537ff5cd669c5a76c5f5b6a9169fd9b913d18" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "cbc7b02bb99fae35cb42f514762b89b5126651ef" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
