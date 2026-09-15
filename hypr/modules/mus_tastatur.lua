@@ -26,6 +26,9 @@ hl.gesture({
     action = "workspace"
 })
 
+
+
+
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 --hl.device({

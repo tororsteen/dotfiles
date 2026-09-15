@@ -37,7 +37,6 @@ hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
 
-
 -- Cycle forward and backward between tabs in the group
 hl.bind("ALT + TAB", hl.dsp.group.next(), { description = "Next tab" })
 hl.bind("ALT + SHIFT + TAB", hl.dsp.group.prev(), { description = "Previous tab" })
