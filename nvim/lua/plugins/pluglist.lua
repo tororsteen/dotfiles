@@ -21,6 +21,7 @@ return {
 
     { "elkowar/yuck.vim" }
 
+
 }
  -- Disse har egne filer under /lua/plugins/pluglist.lua
     -- gitsigns.lua
