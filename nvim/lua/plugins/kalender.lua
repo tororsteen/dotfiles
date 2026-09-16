@@ -1,8 +1,11 @@
 return{
+"atiladefreitas/bloocky",
 
+    config = function()
 require('bloocky').setup({
      window = { width = "full", height = "full" },
      week_start = "monday",
+     default_view = "month",
     sync = {
         enabled = true,
         accounts = {
@@ -15,4 +18,5 @@ require('bloocky').setup({
         },
     },
 })
+end,
 }

@@ -1,3 +1,0 @@
-# Exclude sensitive configuration file
-nvim/lua/plugins/kalender.lua
-

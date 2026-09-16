@@ -6,6 +6,9 @@ vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvi
 -- Esc fjerne utheving etter søk
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
 
+-- Åpne kalenderen med ,k
+vim.keymap.set("n", "<leader>k", ":Bloocky<CR>", { silent = true })
+
 -- Det er noen bindinger i andre moduler
 -- /home/tor/dotfiles/nvim/lua/config/latex_conf.lua inneholder bindinger som er spesielle for LaTex
 -- /home/tor/dotfiles/nvim/lua/config/nmutt.lua inneholder bindinga Ctrl h for å skrive avsluttende hilsen
