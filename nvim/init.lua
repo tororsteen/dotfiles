@@ -48,7 +48,10 @@ require("lazy").setup({
 
 require('lualine').setup {
   options = {
+      -- Kan variere tema på statuslinja
     theme = 'papercolor_light' -- Put your preferred built-in theme name here
+  --  theme = 'ayu_light'
+ --   theme = 'powerline'
   }
 }
 
