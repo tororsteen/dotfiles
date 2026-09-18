@@ -9,6 +9,19 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highl
 -- Åpne kalenderen med ,k
 vim.keymap.set("n", "<leader>k", ":Bloocky<CR>", { silent = true })
 
+-- Setter inn [ ] i huskelista med Ctrl-x
+local function sjekkboks()
+  vim.api.nvim_put({ "- [ ] "}, "c", true, true)
+end
+
+-- Binder kommando til Ctrl-x i Insert Mode
+vim.keymap.set('i', '<C-x>', sjekkboks, {
+  desc = "Binder kommando til Ctrl-x (Insert Mode)",
+  noremap = true,
+  silent = true
+})
+
+
 -- Det er noen bindinger i andre moduler
 -- /home/tor/dotfiles/nvim/lua/config/latex_conf.lua inneholder bindinger som er spesielle for LaTex
 -- /home/tor/dotfiles/nvim/lua/config/nmutt.lua inneholder bindinga Ctrl h for å skrive avsluttende hilsen
