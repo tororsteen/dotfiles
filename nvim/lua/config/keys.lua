@@ -9,6 +9,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highl
 -- Åpne kalenderen med ,k
 vim.keymap.set("n", "<leader>k", ":Bloocky<CR>", { silent = true })
 
+-- Finner stående mappe (pwd)
+
+vim.keymap.set('n', '<leader>pw', '<cmd>lua print(vim.fn.getcwd())<CR>', { desc = 'Skriver sti til stående mappe' })
+
 -- Setter inn [ ] i huskelista med Ctrl-x
 local function sjekkboks()
   vim.api.nvim_put({ "- [ ] "}, "c", true, true)
