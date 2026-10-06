@@ -13,6 +13,11 @@ vim.keymap.set("n", "<leader>k", ":Bloocky<CR>", { silent = true })
 
 vim.keymap.set('n', '<leader>pw', '<cmd>lua print(vim.fn.getcwd())<CR>', { desc = 'Skriver sti til stående mappe' })
 
+-- Skriver ut på skriveren hjemme
+
+vim.keymap.set('n', '<Leader>pr', ':w !lpr<CR>', { desc = 'Skriv ut filen med lpr' })
+ 
+  
 -- Setter inn [ ] i huskelista med Ctrl-x
 local function sjekkboks()
   vim.api.nvim_put({ "- [ ] "}, "c", true, true)
