@@ -71,3 +71,5 @@ alias hyl='hyprpm list'
 alias hyu='hyprpm update'
 alias hyr='hyprpm reload'
 alias hye='hyprpm enable' #navn på plugin
+#Aktivere maxsparing under tlp
+alias spare='tlpctl power-saver'
