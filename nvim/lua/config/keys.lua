@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>pw', '<cmd>lua print(vim.fn.getcwd())<CR>', { desc 
 
 -- Skriver ut på skriveren hjemme
 
-vim.keymap.set('n', '<Leader>pr', ':w !lpr<CR>', { desc = 'Skriv ut filen med lpr' })
+vim.keymap.set('n', '<C-p>', ':w !lpr<CR>', { desc = 'Skriv ut filen med lpr' })
  
   
 -- Setter inn [ ] i huskelista med Ctrl-x

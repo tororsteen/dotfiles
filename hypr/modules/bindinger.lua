@@ -53,7 +53,7 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- ALT + Left Click (Quick Tap): Skift til full skjerm
-hl.bind("ALT + mouse:272", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { mouse = true, click = true })
+-- hl.bind("ALT + mouse:272", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }), { mouse = true, click = true })
 
 --hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
